@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
 
+  showCalculatorForm =  true;
+
   constructor() { }
 
   ngOnInit(): void {

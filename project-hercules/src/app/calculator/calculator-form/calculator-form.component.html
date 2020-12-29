@@ -1,17 +1,54 @@
 <p>calculator-form works!</p>
 <form action="">
     <h2>ReFocus Data Strength Calculator</h2>
-    <h3>What type of data do you gather? (Check all that apply)</h3>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" name="checkbox-binary" id="checkbox-binary">
-        <label class="form-check-label" for="checkbox-binary">Data that is yes/no, 1/0, or other binary values</label>
-    </div>
-    <div class="form-check">    
-        <input class="form-check-input" type="checkbox" value="" name="checkbox-numerical" id="checkbox-numerical">
-        <label class="form-check-label" for="checkbox-numerical">Data on pricing, sizing, or other numerical values </label>
-    </div>
-    <div class="form-check">    
-        <input class="form-check-input" type="checkbox" value="" name="checkbox-dates" id="checkbox-dates">
-        <label class="form-check-label" for="checkbox-dates">Data for birth dates, start & end dates, or other calendar date values</label>
-    </div>
+        <label for="calculator-form">What type of data do you gather? (Check all that apply)</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" name="checkbox-binary" id="checkbox-binary">
+                <label class="form-check-label" for="checkbox-binary">Data that is yes/no, 1/0, or other binary values</label>
+            </div>
+            <div class="form-check">    
+                <input class="form-check-input" type="checkbox" value="" name="checkbox-numerical" id="checkbox-numerical">
+                <label class="form-check-label" for="checkbox-numerical">Data on pricing, sizing, or other numerical values </label>
+            </div>
+            <div class="form-check">    
+                <input class="form-check-input" type="checkbox" value="" name="checkbox-dates" id="checkbox-dates">
+                <label class="form-check-label" for="checkbox-dates">Data for birth dates, start & end dates, or other calendar date values</label>
+            </div>
+            <div class="mb-3">
+                <label for="data-points" class="form-label">Number of Data Points</label>
+                <input type="text" class="form-control" id="data-points">
+            </div>
+            <div class="mb-3">
+                <label for="data-attributes" class="form-label">Number of Attributes</label>
+                <input type="text" class="form-control" id="data-attributes">
+            </div>
+            <div>
+                <label for="data-completeness" class="form-label">How complete is your data?</label>
+                <input type="range" class="form-range" min="0" max="100" step="0.5" id="data-completeness">
+            </div>
+            <div>
+                <label for="data-update-frequency">Data Update Frequency</label>
+                <select id="data-update-frequency"  class="form-select" aria-label="Default select example">
+                    <option selected>Choose frequency</option>
+                    <option value="1">Once a week</option>
+                    <option value="2">Biweekly</option>
+                    <option value="3">Once a month</option>
+                    <!-- option to enter own value? -->
+                    <option value="4">Other</option>
+                  </select>
+            </div>
+            <div>
+                <label for="data-location">Location of Data</label>
+                <select id="data-location"  class="form-select" aria-label="Default select example">
+                    <option selected>Choose location</option>
+                    <option value="1">Database</option>
+                    <option value="2">Google Sheets</option>
+                    <option value="3">Microsoft Excel Spreadsheet</option>
+                    <!-- option to enter own value? -->
+                    <option value="4">Other</option>
+                  </select>
+            </div>
+            <div>
+                <button type="button" class="btn btn-warning">Warning</button>
+            </div>
 </form>

@@ -8,7 +8,6 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { ContactFormComponent } from './calculator/contact-form/contact-form.component';
 import { CalculatorFormComponent } from './calculator/calculator-form/calculator-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
-import { FooterComponent } from './calculator/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,9 +15,7 @@ import { FooterComponent } from './calculator/footer/footer.component';
     CalculatorComponent,
     ContactFormComponent,
     CalculatorFormComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
+    HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

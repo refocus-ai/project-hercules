@@ -3,27 +3,98 @@
 
 body{
     background-color: #ffffff;
-    font-family: 'IBM Plex Sans', sans-serif !important;
-        
+    font-family: 'IBM Plex Sans', sans-serif !important;  
+    h1{
+        background: -webkit-linear-gradient(360deg,#F06E13, #AF5184);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }      
     h2{
         font-size: 24px;
         font-weight: 700;
         }
+    h3{
+        font-weight: 400;
+        font-size: 18px;
+        color: #828282;
+    };
+       
 }
 
+.calculator-header{
+    font-size: 14px;
+    font-weight: 700;
+    color: #5B5B5B;
+}
 
 .btn{
     background-color: #E88845 !important;
+    width: 100%;
+    margin: 8px;
+    color: #ffffff !important;
 }
 .btn-link {
     background-color: transparent;
     border: none;
 }
 
+.slidecontainer {
+    width: 100%;
+  }
+
+.slider{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 8px; /* Specified height */
+    border-radius: 5px; 
+    background: #E88845; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 16px; /* Set a specific slider handle width */
+    height: 16px; /* Slider handle height */
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #ffffff; /* orange background */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 16px; /* Set a specific slider handle width */
+    height: 16px; /* Slider handle height */
+    background: #ffffff; /* orange background */
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer; /* Cursor on hover */
+  }
+
 .form-border{
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 8px;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  padding: 24px 24px;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+}
+
+.form-check{
+    font-size: 12px;
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+.form-check-container {
+    text-align: left;
+    padding-left: none;
 }

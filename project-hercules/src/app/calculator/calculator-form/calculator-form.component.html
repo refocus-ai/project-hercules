@@ -24,9 +24,10 @@
                     <label for="data-attributes" class="form-label calculator-header">Number of Attributes</label>
                     <input type="text" class="form-control" id="data-attributes">
                 </div>
-                <div>
-                    <label for="data-completeness" class="form-label calculator-header slidecontainer">How complete is your data?</label>
-                    <input type="range" class="form-range slider" min="0" max="100" step="0.5" id="data-completeness">
+                <div class="slidecontainer">
+                    <label for="myRange" class="form-label calculator-header">How complete is your data?</label>
+                    <input type="range" min="0" max="100" value="1" id="myRange" class="form-range slider" >
+                    <p>Value: <span id="rangeValue"></span></p>
                 </div>
                 <div>
                     <label for="data-update-frequency" class="calculator-header"s>Data Update Frequency</label>

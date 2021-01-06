@@ -21,6 +21,11 @@ body{
     };
        
 }
+p {
+  margin-top: 25px;
+  opacity: 0.7;
+  color: black;
+}
 
 .calculator-header{
     font-size: 14px;
@@ -41,42 +46,85 @@ body{
 
 .slidecontainer {
     width: 100%;
-  }
-
-.slider{
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 8px; /* Specified height */
-    border-radius: 5px; 
-    background: #E88845; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-    transition: opacity .2s;
+    margin-bottom: 20px;
   }
   .slider:hover {
-    opacity: 1; /* Fully shown on mouse-over */
+        opacity: 1; /* Fully shown on mouse-over */
+      }
+
+  .slider {
+    width: 100%;
   }
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 16px; /* Set a specific slider handle width */
-    height: 16px; /* Slider handle height */
-    border-radius: 50%; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: #ffffff; /* orange background */
-    cursor: pointer; /* Cursor on hover */
+
+
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    input[type='range'] {
+      overflow: hidden;
+      width: 100%;
+      height: 16px;
+      border-radius: 8px; 
+      -webkit-appearance: none;
+      background-color: lightgrey;
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 16px;
+      -webkit-appearance: none; /* Override default CSS styles */
+      color: #E88845;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: white;
+      box-shadow: -220px 0 0 210px #E88845;
+      width: 16px; /* Set a specific slider handle width */
+      height: 16px; /* Slider handle height */
+      border-radius: 50%; 
+      cursor: pointer; /* Cursor on hover */
+    }
+    
+    }
+    /** FF*/
+    input[type="range"]::-moz-range-progress {
+      background-color:#E88845; 
+    }
+    input[type="range"]::-moz-range-track {  
+      background-color: white;
+    }
+    /* IE*/
+    input[type="range"]::-ms-fill-lower {
+      background-color:#E88845; 
+    }
+    input[type="range"]::-ms-fill-upper {  
+      background-color: white;
+    }
+
+
+  .slider::after {
+    content: '100';
+    color: black;
+    font-size: 12px; 
+    position: absolute;
+    left: 82%;
+    top: 37.5%;
   }
+
+  .slider::before {
+    content: '0';
+    color: black;
+    font-size: 12px; 
+    position: absolute;
+    left: 13.5%;
+    top: 37.5%;
+ }
   
-  .slider::-moz-range-thumb {
-    width: 16px; /* Set a specific slider handle width */
-    height: 16px; /* Slider handle height */
-    background: #ffffff; /* orange background */
-    border-radius: 50%; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer; /* Cursor on hover */
-  }
 
 .form-border{
   text-align: center;

@@ -26,8 +26,8 @@
                 </div>
                 <div class="slidecontainer">
                     <label for="myRange" class="form-label calculator-header">How complete is your data?</label>
-                    <input type="range" min="0" max="100" value="1" id="myRange" class="form-range slider" >
-                    <p>Value: <span id="rangeValue"></span></p>
+                    <input type="range" min="0" max="100" value="1" id="myRange" class="form-range slider" oninput="this.nextElementSibling.value = this.value" >
+                    <output>1</output> <span>%</span>
                 </div>
                 <div>
                     <label for="data-update-frequency" class="calculator-header"s>Data Update Frequency</label>

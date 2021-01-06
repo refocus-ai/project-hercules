@@ -27,6 +27,12 @@ p {
   color: black;
 }
 
+.input-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .calculator-header{
     font-size: 14px;
     font-weight: 700;
@@ -66,7 +72,7 @@ p {
       height: 16px;
       border-radius: 8px; 
       -webkit-appearance: none;
-      background-color: #C4C4C4;
+      background-color: #cecece;
       outline: none; /* Remove outline */
       opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
       -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -115,8 +121,8 @@ p {
     color: black;
     font-size: 12px; 
     position: absolute;
-    left: 82%;
-    top: 37.5%;
+    left: 84.5%;
+    top: 33%;
   }
 
   .slider::before {
@@ -124,8 +130,8 @@ p {
     color: black;
     font-size: 12px; 
     position: absolute;
-    left: 13.5%;
-    top: 37.5%;
+    left: 11.5%;
+    top: 33%;
  }
   
 
@@ -140,27 +146,89 @@ p {
 
 .form-check{
     font-size: 12px;
-    margin-left: 20px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 400;
 }
 .form-check-container {
     text-align: left;
-    padding-left: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 input[type=text] {
   background-color: #fbfbfb;
+  justify-content: space-between;
 }
 input[type=email] {
   background-color: #fbfbfb;
 }
 
-select {
-  width: 100%;
-  padding: 16px 20px;
-  border: none;
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fbfbfb;
   border-radius: 4px;
-  background-color: #f1f1f1;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #D1D1D1;
+  margin-top: 0.1rem;
+  margin-left: -1.5rem;
+}
+
+input[type="checkbox"]:checked {
+  background: #E88845;
+}
+
+input[type="checkbox"]:hover {
+  filter: brightness(90%);
+}
+
+input[type="checkbox"]:after {
+  content: '\2713\0020';
+  position: relative;
+  left: 22%;
+  bottom: 8%;
+  color:white;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+  
+select {
+  width: 190px;
+  height: 38px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 0;
+  background: #fbfbfb url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='black'/></g></svg>") no-repeat;
+  background-position: right 5px top 50%;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  color:black;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  padding-left: 20px;
+}
+
+/* For IE <= 11 */
+select::-ms-expand {
+  display: none; 
+}
+
+select:hover,
+select:focus {
+  color: black;
+  border-bottom-color: #DCDCDC;
+  border-radius: 4px;
 }
 

@@ -18,13 +18,22 @@ body{
         font-weight: 400;
         font-size: 18px;
         color: #828282;
-    };
+    }
+    
        
 }
 p {
   margin-top: 25px;
   opacity: 0.7;
   color: black;
+}
+
+.go-back{
+  color: #A5A5A5;
+}
+.go-back:hover{
+  color: black;
+  text-decoration: none;
 }
 
 .input-container{
@@ -45,8 +54,14 @@ p {
     margin: 8px;
     color: #ffffff !important;
 }
+
+.btn-next{
+  margin-top: 30px;
+}
+
 .btn-link {
     background-color: transparent;
+    color: blueviolet;
     border: none;
 }
 
@@ -122,7 +137,7 @@ p {
     font-size: 12px; 
     position: absolute;
     left: 84.5%;
-    top: 33%;
+    top: 30.5%;
   }
 
   .slider::before {
@@ -131,7 +146,7 @@ p {
     font-size: 12px; 
     position: absolute;
     left: 11.5%;
-    top: 33%;
+    top: 30.5%;
  }
   
 
@@ -156,7 +171,17 @@ p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-bottom: 20px;
 }
+
+.form-control{
+  margin-top: 8px;
+}
+
+.form-select{
+  margin-top: 8px;
+}
+
 input[type=text] {
   background-color: #fbfbfb;
   justify-content: space-between;
@@ -232,3 +257,7 @@ select:focus {
   border-radius: 4px;
 }
 
+textarea.form-control {
+  background-color: #fbfbfb;
+  resize: none;
+}

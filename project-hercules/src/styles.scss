@@ -137,7 +137,7 @@ p {
     font-size: 12px; 
     position: absolute;
     left: 84.5%;
-    top: 30.5%;
+    top: 62%;
   }
 
   .slider::before {
@@ -146,13 +146,13 @@ p {
     font-size: 12px; 
     position: absolute;
     left: 11.5%;
-    top: 30.5%;
+    top: 62%;
  }
   
 
 .form-border{
   text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 21px 0 rgba(0, 0, 0, 0.19);
   border-radius: 8px;
   padding: 24px 24px;
   padding-left: 48px !important;
@@ -260,4 +260,17 @@ select:focus {
 textarea.form-control {
   background-color: #fbfbfb;
   resize: none;
+}
+
+:host {
+  display: block;
+}
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
 }

@@ -1,5 +1,5 @@
-<div class="container form-border">
-    <form action="">
+<div class="container form-border" [@fadeInAnimation]>
+    <form action="" >
         <h2>ReFocus Data Strength Calculator</h2>      
                 <label for="calculator-form" class="calculator-header">What type of data do you gather? (Check all that apply)</label>
                 <div class="container form-check-container pl-1">
@@ -56,8 +56,8 @@
                     </div>
                 </div>
                 
-                <div>
-                    <button type="button" class="btn btn-next container">Next</button>
+                <div >
+                    <button  type="button" (click)="toggleForms()" class="btn btn-next container" id="check">Next</button>
                 </div>
     </form>
 </div>

@@ -20,7 +20,12 @@ export class CalculatorComponent implements OnInit {
 
   showCalculatorForm =  true;
   showContactForm = false;
+  
+toggle() { 
+    this.showCalculatorForm = !this.showCalculatorForm; 
+      
 
+}
   
   constructor() { }
 

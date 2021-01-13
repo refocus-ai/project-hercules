@@ -25,15 +25,6 @@ import {
 })
 export class CalculatorFormComponent implements OnInit {
 
-  // showCalculatorForm =  true;
-  // showContactForm =  false;
-
-  isOpen = true;
-
-  toggle() {
-    this.isOpen = !this.isOpen;
-
-}
 
 
   constructor() { }

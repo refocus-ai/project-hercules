@@ -164,7 +164,7 @@ p {
       -webkit-appearance: none;
       background: white;
       box-shadow: -220px 0 0 210px #E88845;
-      border: rgba(0, 0, 0, 0.29);
+      border: rgba(0, 0, 0, 0.8);
       border-style: solid;
       border-width: thin;
       width: 16px; /* Set a specific slider handle width */
@@ -188,25 +188,6 @@ p {
     input[type="range"]::-ms-fill-upper {  
       background-color: white;
     }
-
-
-  .slider::after {
-    content: '100';
-    color: black;
-    font-size: 12px; 
-    position: absolute;
-    left: 84.5%;
-    top: 62%;
-  }
-
-  .slider::before {
-    content: '0';
-    color: black;
-    font-size: 12px; 
-    position: absolute;
-    left: 11.5%;
-    top: 62%;
- }
   
 
 .form-border{

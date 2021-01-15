@@ -20,18 +20,20 @@ export class CalculatorComponent implements OnInit {
 
   showCalculatorForm =  true;
   showContactForm = false;
-  
-toggle() { 
-    this.showCalculatorForm = !this.showCalculatorForm; 
-      
 
-}
   
   constructor() { }
 
   ngOnInit(): void {
   
   }
+
+  toggle() { 
+    this.showCalculatorForm = !this.showCalculatorForm; 
+    this.showContactForm = !this.showContactForm; 
+
+}
+
 
   
 }

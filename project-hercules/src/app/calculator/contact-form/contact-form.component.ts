@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
+  @Output() goBack: EventEmitter <any> = new EventEmitter <any> ();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggle() {
+      this.goBack.emit(null)
   }
 
 }

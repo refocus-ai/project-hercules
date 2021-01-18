@@ -1,4 +1,4 @@
-<div class="container form-border" [@fadeInAnimation]>
+<div class="container form-border punk" [@fadeInAnimation]>
     <form action="">
         <h2>ReFocus Data Strength Calculator</h2>      
                 <label for="calculator-form" class="calculator-header">What type of data do you gather? (Check all that apply)</label>
@@ -34,7 +34,7 @@
                 <div class="form-inline input-container container">
                     <div>
                         <label for="data-update-frequency" class="calculator-header"s>Data Update Frequency</label>
-                        <select id="data-update-frequency"  class="form-select" aria-label="Default select example" (change)="dropdownChangeOne($event.target.value)">
+                        <select id="data-update-frequency"  class="form-select" aria-label="Default select example" (change)="dropdownChangeOne($event.target.value).value ">
     \                       <option selected>Choose frequency</option>
                             <option value="1">Once a week</option>
                             <option value="2">Biweekly</option>
@@ -42,11 +42,11 @@
                             <!-- option to enter own value? -->
                             <option value="4">Other</option>
                           </select>
-                          <input type="text" name="frequency" id="frequency" style='display:none'/>
+                          <input type="text" name="frequency" class="hiddenInput form-control" id="frequency" style='display:none'/>
                     </div>
                     <div>
                         <label for="data-location" class="calculator-header">Location of Data</label>
-                        <select id="data-location"  class="form-select" aria-label="Default select example" (change)="dropdownChangeTwo($event.target.value)">
+                        <select id="data-location"  class="form-select" aria-label="Default select example" (change)="dropdownChangeTwo($event.target).value">
                             <option selected>Choose location</option>
                             <option value="1">Database</option>
                             <option value="2">Google Sheets</option>
@@ -54,7 +54,7 @@
                             <!-- option to enter own value? -->
                             <option value="4">Other</option>
                           </select>
-                          <input type="text" name="location" id="location" style='display:none'/>
+                          <input type="text" name="location" class="hiddenInput form-control" id="location" style='display:none'/>
                     </div>
                 </div>
 

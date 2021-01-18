@@ -13,6 +13,9 @@ body{
     h2{
         font-size: 24px;
         font-weight: 700;
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
         }
     h3{
         font-weight: 400;
@@ -82,9 +85,13 @@ li a:hover {
 
 
 p {
-  margin-top: 25px;
+  margin-top: 20px;
   opacity: 0.7;
   color: black;
+  max-width: 400px;
+  text-align: left;
+  margin: 20px 10px;
+  font-size: 14px;
 }
 
 .go-back{
@@ -164,7 +171,7 @@ p {
       -webkit-appearance: none;
       background: white;
       box-shadow: -220px 0 0 210px #E88845;
-      border: rgba(0, 0, 0, 0.8);
+      border: rgba(0, 0, 0, 0.29);
       border-style: solid;
       border-width: thin;
       width: 16px; /* Set a specific slider handle width */
@@ -313,4 +320,9 @@ textarea.form-control {
   color: #000000;
   font-weight: bold;
   font-size: 20px;
+}
+.punk {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
 }

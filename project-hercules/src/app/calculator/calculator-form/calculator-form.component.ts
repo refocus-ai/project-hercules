@@ -31,10 +31,16 @@ export class CalculatorFormComponent implements OnInit {
 
   @Output() next: EventEmitter <any> = new EventEmitter <any> ();
   
-  public demoArray = ["opt1", "opt2", "opt3", "opt4"];
+  public freqArray = ["Once a week", "Biweekly", "Once a month", "other"];
   public updateFreq: any;
 
+  public locationArray = ["Database", "Google Sheets", "Microsoft Excel Spreadsheet", "other"];
+  public dataLocation: any;
+
+
+
   showFrequencyInput = false;
+  showLocationInput = false;
 
   constructor() { }
 
@@ -43,19 +49,22 @@ export class CalculatorFormComponent implements OnInit {
 
   dropdownChangeOne(val: any) {
     let value = val["target"]["value"];
-    if(value==='4') {
+    console.log(val.target.value)
+    if(value==="other") {
       this.showFrequencyInput = true;
     } else {
       this.showFrequencyInput = false
     }
   }
 
-  dropdownChangeTwo(value: any) {
-    if(value==='4')
-       document.getElementById('location')!.style.display='block';
-    else
-       document.getElementById('location')!.style.display='none'; 
-  }
+  dropdownChangeTwo(val: any) {
+    let value = val["target"]["value"];
+    if(value==="other"){
+      this.showLocationInput = true;
+    } else {
+      this.showLocationInput = false
+    }
+}
 
 
 

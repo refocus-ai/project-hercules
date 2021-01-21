@@ -37,21 +37,16 @@
                             <div class="col-12">
                                 <div>
                                     <label for="data-update-frequency" class="calculator-header">Data Update Frequency</label>
-                                    <select id="data-update-frequency"  class="form-select" aria-label="Default select example" [(ngModel)]="updateFreq" (change)="dropdownChangeOne($event)">
-                                        <option *ngFor="let o of demoArray" [value]="o" >{{ o }}</option>
-                <!-- \                       <option selected value="0">Choose frequency</option>
-                                        <option value="1">Once a week</option>
-                                        <option value="2">Biweekly</option>
-                                        <option value="3">Once a month</option> -->
-                                        <!-- option to enter own value? -->
-                                        <!-- <option value="4">Other</option> -->
+                                    <select id="data-update-frequency"  class="form-select" aria-label="Default select example" [(ngModel)]="updateFreq" [ngModelOptions]="{standalone: true}" (change)="dropdownChangeOne($event)">
+                                        <option *ngFor="let o of freqArray" [value]="o" >{{ o }}</option>
+                <!-- \                       <option selected value="0">Choose frequency</option> -->
                                       </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <input *ngIf="showFrequencyInput" type="text" name="frequency" class="hiddenInput form-control" id="frequency" style='display:none'/>
+                                <input *ngIf="showFrequencyInput" type="text" name="frequency" class="hiddenInput form-control" id="frequency"/>
                             </div>
                         </div>
                     </div>
@@ -60,20 +55,16 @@
                             <div class="col-12">
                                 <div>
                                     <label for="data-location" class="calculator-header">Location of Data</label>
-                                    <select id="data-location"  class="form-select" aria-label="Default select example" (change)="dropdownChangeTwo($event)" >
-                                        <option selected value="0">Choose location</option>
-                                        <option value="1">Database</option>
-                                        <option value="2">Google Sheets</option>
-                                        <option value="3">Microsoft Excel Spreadsheet</option>
-                                        <!-- option to enter own value? -->
-                                        <option value="4">Other</option>
+                                    <select id="data-location"  class="form-select" aria-label="Default select example" [(ngModel)]="dataLocation" [ngModelOptions]="{standalone: true}" (change)="dropdownChangeTwo($event)" >
+                                        <option *ngFor="let o of locationArray" [value]="o" >{{ o }}</option>
+                                        <!-- <option selected value="0">Choose location</option> -->
                                       </select>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <input type="text" name="location" class="hiddenInput form-control" id="location" style='display:none'/>
+                                <input *ngIf="showLocationInput" type="text" name="location" class="hiddenInput form-control" id="location"/>
                             </div>
                         </div>
                     </div>

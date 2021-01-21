@@ -8,7 +8,9 @@ import {
   // ...
 } from '@angular/animations';
 
+
 @Component({
+  
   selector: 'app-calculator-form',
   templateUrl: './calculator-form.component.html',
   styleUrls: ['./calculator-form.component.scss'],
@@ -23,20 +25,29 @@ import {
   )
   ]
 })
+
+
 export class CalculatorFormComponent implements OnInit {
 
   @Output() next: EventEmitter <any> = new EventEmitter <any> ();
+  
+  public demoArray = ["opt1", "opt2", "opt3", "opt4"];
+  public updateFreq: any;
+
+  showFrequencyInput = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  dropdownChangeOne(value: any) {
-    if(value==='4')
-       document.getElementById('frequency')!.style.display='block';
-    else
-       document.getElementById('frequency')!.style.display='none'; 
+  dropdownChangeOne(val: any) {
+    let value = val["target"]["value"];
+    if(value==='4') {
+      this.showFrequencyInput = true;
+    } else {
+      this.showFrequencyInput = false
+    }
   }
 
   dropdownChangeTwo(value: any) {
@@ -51,5 +62,7 @@ export class CalculatorFormComponent implements OnInit {
   toggle() {
     this.next.emit(null)
   }
+
+  
 
 }

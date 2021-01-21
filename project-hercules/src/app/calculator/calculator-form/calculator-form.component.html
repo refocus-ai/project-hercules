@@ -31,33 +31,53 @@
                     <input type="range" min="0" max="100" value="0" id="myRange" class="form-range slider" oninput="this.nextElementSibling.value = this.value" >
                     <output>0</output> <span>%</span>
                 </div>
-                <div class="form-inline input-container container">
-                    <div>
-                        <label for="data-update-frequency" class="calculator-header"s>Data Update Frequency</label>
-                        <select id="data-update-frequency"  class="form-select" aria-label="Default select example" (change)="dropdownChangeOne($event.target.value).value ">
-    \                       <option selected>Choose frequency</option>
-                            <option value="1">Once a week</option>
-                            <option value="2">Biweekly</option>
-                            <option value="3">Once a month</option>
-                            <!-- option to enter own value? -->
-                            <option value="4">Other</option>
-                          </select>
-                          <input type="text" name="frequency" class="hiddenInput form-control" id="frequency" style='display:none'/>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <label for="data-update-frequency" class="calculator-header">Data Update Frequency</label>
+                                    <select id="data-update-frequency"  class="form-select" aria-label="Default select example" [(ngModel)]="updateFreq" (change)="dropdownChangeOne($event)">
+                                        <option *ngFor="let o of demoArray" [value]="o" >{{ o }}</option>
+                <!-- \                       <option selected value="0">Choose frequency</option>
+                                        <option value="1">Once a week</option>
+                                        <option value="2">Biweekly</option>
+                                        <option value="3">Once a month</option> -->
+                                        <!-- option to enter own value? -->
+                                        <!-- <option value="4">Other</option> -->
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input *ngIf="showFrequencyInput" type="text" name="frequency" class="hiddenInput form-control" id="frequency" style='display:none'/>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="data-location" class="calculator-header">Location of Data</label>
-                        <select id="data-location"  class="form-select" aria-label="Default select example" (change)="dropdownChangeTwo($event.target).value">
-                            <option selected>Choose location</option>
-                            <option value="1">Database</option>
-                            <option value="2">Google Sheets</option>
-                            <option value="3">Microsoft Excel Spreadsheet</option>
-                            <!-- option to enter own value? -->
-                            <option value="4">Other</option>
-                          </select>
-                          <input type="text" name="location" class="hiddenInput form-control" id="location" style='display:none'/>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <label for="data-location" class="calculator-header">Location of Data</label>
+                                    <select id="data-location"  class="form-select" aria-label="Default select example" (change)="dropdownChangeTwo($event)" >
+                                        <option selected value="0">Choose location</option>
+                                        <option value="1">Database</option>
+                                        <option value="2">Google Sheets</option>
+                                        <option value="3">Microsoft Excel Spreadsheet</option>
+                                        <!-- option to enter own value? -->
+                                        <option value="4">Other</option>
+                                      </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="text" name="location" class="hiddenInput form-control" id="location" style='display:none'/>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                 <div >
                     <button  type="button" (click)="toggle()" class="btn btn-next container" id="check">Next</button>
                 </div>

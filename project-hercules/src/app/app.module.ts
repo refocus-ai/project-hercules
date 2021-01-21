@@ -9,6 +9,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { ContactFormComponent } from './calculator/contact-form/contact-form.component';
 import { CalculatorFormComponent } from './calculator/calculator-form/calculator-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { HeaderComponent } from './calculator/header/header.component';
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

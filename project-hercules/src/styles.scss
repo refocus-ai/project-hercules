@@ -14,8 +14,6 @@ body{
         font-size: 24px;
         font-weight: 700;
         max-width: 400px;
-        display: flex;
-        justify-content: center;
         }
     h3{
         font-weight: 400;
@@ -88,9 +86,7 @@ p {
   margin-top: 20px;
   opacity: 0.7;
   color: black;
-  max-width: 400px;
   text-align: left;
-  margin: 20px 10px;
   font-size: 14px;
 }
 
@@ -123,6 +119,8 @@ p {
 
 .btn-next{
   margin-top: 30px;
+  width: 93.5%;
+  margin-left: 15px;
 }
 
 .btn-link {
@@ -275,7 +273,7 @@ input[type="checkbox"]:checked:after {
 }
   
 select {
-  width: 190px;
+  width: 200px;
   height: 38px;
   font-size: 12px;
   cursor: pointer;

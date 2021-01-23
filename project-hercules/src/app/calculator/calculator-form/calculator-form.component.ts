@@ -8,6 +8,7 @@ import {
   // ...
 } from '@angular/animations';
 import { ValueTransformer } from '@angular/compiler/src/util';
+import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
 
 
 @Component({
@@ -45,8 +46,10 @@ export class CalculatorFormComponent implements OnInit {
 
   public onSaveUsernameChanged(value: any){
     this.saveUsername = value;
-     if(value && this.checkSum < 20) {
-       this.checkSum += 20;
+     if (!value) {
+      this.checkSum -= 15;
+     } else if (value && this.checkSum < 20) {
+      this.checkSum += 20;
      } else if (value && this.checkSum >= 20) {
        this.checkSum += 5;
      } else if (!value && this.checkSum <= 20) {
@@ -90,6 +93,7 @@ public onSaveUsernameThreeChanged(value: any){
   dataPointsSum = 0;
   attributesSum = 0;
   checkSum =  0;
+  sliderSum = 0;
 
   
   constructor() { }
@@ -98,21 +102,22 @@ public onSaveUsernameThreeChanged(value: any){
   }
 
  changeDataPoints(event: { target: { value: any; }; }) {
-  if(event.target.value) {
-    this.dataPointsSum += parseInt(event.target.value);
-  }
-  {console.log(this.dataPointsSum);}
+   const dataInput = this.dataPointsSum += parseFloat(event.target.value);
+   const divideDataInput = (Math.log10(dataInput))/4;
+   const roundDataInput = (Math.round(divideDataInput)) *10;
+   console.log(roundDataInput)
  } 
 
  changeAttributes(event: { target: { value: any; }; }) {
-  if(event.target.value) {
-    this.attributesSum += parseInt(event.target.value);
-  }
-  {console.log(this.attributesSum);}
+    const attrInput = this.attributesSum += parseFloat(event.target.value);
+    const divideAttrInput = (Math.floor(attrInput)/30) *10;
+    console.log(divideAttrInput)
  } 
 
- valueChanged(e: any) {
-  console.log(e);
+ valueChanged(e: number) {
+  const rounded = Math.round(e)/100;
+  // when return, code becomes unreachable
+  console.log(rounded*40);
 }
 
 
@@ -135,6 +140,10 @@ public onSaveUsernameThreeChanged(value: any){
     }
 }
 
+scoreCalculation() {
+  const scoreTotal = this.dataPointsSum + this.attributesSum + this.checkSum + this.sliderSum;
+  return scoreTotal
+}
 
 
 
@@ -149,10 +158,9 @@ public onSaveUsernameThreeChanged(value: any){
 
 // Use ngModel for 2 way binding on the checks
 // Math.log10() -- built in funtion
-// app.filter("round")?? or Math.floor??
+// **** app.filter("round")?? or Math.floor??
 // Math.max? for max values
-// variable for each category to that we can sum all four up at the end
-// each category should have a max value to that you scale down or up to ... all taken care of by rounding down to 1 and then multiplying by 20 or 10 or whatever it may be 
+// variable for each category to that we can sum all four up at the end?
 
 
 // Data score has a max value of 100; the higher the score the better
@@ -163,7 +171,7 @@ public onSaveUsernameThreeChanged(value: any){
   // 20 points for one data type selected
   // 25 points for two data types selected
   // 30 points for all three data points selected
-  // If the binary data type option is not selected, deduct 10 points from the total score
+  // ***** If the binary data type option is not selected, deduct 10 points from the total score
   
   // Number of Data Points
     // Take the log, base 10, of the number of data points
@@ -179,6 +187,3 @@ public onSaveUsernameThreeChanged(value: any){
   // Percentage of Data Complete
     // Multiply the percentage by 40 (percentage should be in decimal form; ie - 97% = 0.97)
   
-  
-  // Finally, add all 4 of these individual scores together. js function that returns 
-  // a numerical value for the data score

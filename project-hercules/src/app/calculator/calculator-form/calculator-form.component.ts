@@ -101,18 +101,18 @@ public onSaveUsernameThreeChanged(value: any){
   ngOnInit(): void {
   }
 
- changeDataPoints(event: { target: { value: any; }; }) {
-   const dataInput = this.dataPointsSum += parseFloat(event.target.value);
-   const divideDataInput = (Math.log10(dataInput))/4;
-   const roundDataInput = (Math.round(divideDataInput)) *10;
-   console.log(roundDataInput)
- } 
+//  changeDataPoints(event: { target: { value: any; }; }) {
+//    const dataInput = this.dataPointsSum += parseFloat(event.target.value);
+//    const divideDataInput = (Math.log10(dataInput))/4;
+//    const roundDataInput = (Math.round(divideDataInput)) *10;
+//    console.log(roundDataInput)
+//  } 
 
- changeAttributes(event: { target: { value: any; }; }) {
-    const attrInput = this.attributesSum += parseFloat(event.target.value);
-    const divideAttrInput = (Math.floor(attrInput)/30) *10;
-    console.log(divideAttrInput)
- } 
+//  changeAttributes(event: { target: { value: any; }; }) {
+//     const attrInput = this.attributesSum += parseFloat(event.target.value);
+//     const divideAttrInput = (Math.floor(attrInput)/30) *10;
+//     console.log(divideAttrInput)
+//  } 
 
  valueChanged(e: number) {
   const rounded = Math.round(e)/100;
@@ -151,7 +151,12 @@ scoreCalculation() {
     this.next.emit(null)
   }
 
-  
+  onSubmit(value: any) {
+    //get the value by its property
+    console.log("Attributes: " + value.attributes);
+    console.log("Data Points: " + value.dataPoints);
+    console.log("Slider: " + value.slider);
+  }
 
 }
 

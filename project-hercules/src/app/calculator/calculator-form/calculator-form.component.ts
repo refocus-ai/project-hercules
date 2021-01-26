@@ -17,15 +17,7 @@ import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
   templateUrl: './calculator-form.component.html',
   styleUrls: ['./calculator-form.component.scss'],
   animations: [
-    trigger(
-      "fadeInAnimation", [
-          transition(":enter", [
-            // maybe need to change enter alias to be something else? ... animation play when elemant is brought into DOM not on page load
-              style({ opacity: 0, transform: "translateY(1%)" }),
-              animate("1500ms", style({ opacity: 1, transform: "translateY(0)" }))
-          ]),
-      ],
-  )
+
   ]
 })
 
@@ -124,7 +116,7 @@ public onSaveUsernameThreeChanged(value: any){
   dropdownChangeOne(val: any) {
     let value = val["target"]["value"];
     console.log(val.target.value)
-    if(value==="Other ") {
+    if(value==="Other") {
       this.showFrequencyInput = true;
     } else {
       this.showFrequencyInput = false
@@ -133,7 +125,7 @@ public onSaveUsernameThreeChanged(value: any){
 
   dropdownChangeTwo(val: any) {
     let value = val["target"]["value"];
-    if(value==="Other "){
+    if(value==="Other"){
       this.showLocationInput = true;
     } else {
       this.showLocationInput = false

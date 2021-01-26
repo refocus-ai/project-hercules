@@ -13,6 +13,16 @@ import { yellow } from '@scullyio/scully';
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
+  animations: [
+    trigger(
+      "fadeInAnimation", [
+          transition(":enter", [
+              style({ opacity: 0, transform: "translateY(1%)" }),
+              animate("1500ms", style({ opacity: 1, transform: "translateY(0)" }))
+          ]), 
+      ],
+  )
+  ]
   
 })
 

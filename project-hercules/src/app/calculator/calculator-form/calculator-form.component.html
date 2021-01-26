@@ -1,30 +1,33 @@
-<div class="container form-border punk" [@fadeInAnimation]>
-    <form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value.name)">
+<div class="container form-border punk">
+    <form action="" #userForm="ngForm"   (ngSubmit)="onSubmit(userForm.value.name)">
         <h2>ReFocus Data Strength Calculator</h2>      
                 <label for="calculator-form" class="calculator-header">What type of data do you gather? (Check all that apply)</label>
                 <div class="container form-check-container pl-1">
                     <div class="form-check">  
-                        <input #saveUserNameCheckBox
+                        <!-- <input #saveUserNameCheckBox
                         id="saveUserNameCheckBox" 
                         type="checkbox" 
                         [checked]="saveUsername" 
-                        (change)="onSaveUsernameChanged(saveUserNameCheckBox.checked)" />
+                        (change)="onSaveUsernameChanged(saveUserNameCheckBox.checked)" /> -->
+                            <input class="form-check-input" type="checkbox" value="" name="checkbox-binary" id="checkbox-binary">
                             <label class="form-check-label" for="checkbox-binary">Data that is yes/no, 1/0, or other binary values</label>
                         </div>
                         <div class="form-check">   
-                            <input #saveUserNameTwoCheckBox
+                            <!-- <input #saveUserNameTwoCheckBox
                             id="saveUserNameTwoCheckBox" 
                             type="checkbox" 
                             [checked]="saveUsernameTwo" 
-                            (change)="onSaveUsernameTwoChanged(saveUserNameTwoCheckBox.checked)" />
+                            (change)="onSaveUsernameTwoChanged(saveUserNameTwoCheckBox.checked)" /> -->
+                            <input class="form-check-input" type="checkbox" value="" name="checkbox-numerical" id="checkbox-numerical">
                             <label class="form-check-label" for="checkbox-numerical">Data on pricing, sizing, or other numerical values </label>
                         </div>
                         <div class="form-check">  
-                            <input #saveUserNameThreeCheckBox
+                            <!-- <input #saveUserNameThreeCheckBox
                             id="saveUserNameThreeCheckBox" 
                             type="checkbox" 
                             [checked]="saveUsernameThree" 
-                            (change)="onSaveUsernameThreeChanged(saveUserNameThreeCheckBox.checked)" />
+                            (change)="onSaveUsernameThreeChanged(saveUserNameThreeCheckBox.checked)" /> -->
+                            <input class="form-check-input" type="checkbox" value="" name="checkbox-dates" id="checkbox-dates">
                             <label class="form-check-label" for="checkbox-dates">Data for birth dates, start & end dates, or other calendar date values</label>
                         </div>     
                     </div>  
@@ -44,7 +47,7 @@
                     <label for="myRange" class="form-label calculator-header">How complete is your data?</label>
                     <input type="range" min="0" max="100" value="0" id="myRange" class="form-range slider" name="slider" ngModel oninput="this.nextElementSibling.value = this.value" >
                     <!-- (change)="valueChanged($event.target.value)" -->
-                    <output>0</output> <span>%</span>
+                    <output>50</output> <span>%</span>
                 </div>
                 <div class="row">
                     <div class="col-6">

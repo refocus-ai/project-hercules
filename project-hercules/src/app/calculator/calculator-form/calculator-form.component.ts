@@ -105,6 +105,7 @@ public onSaveUsernameThreeChanged(value: any){
 //     const divideAttrInput = (Math.floor(attrInput)/30) *10;
 //     console.log(divideAttrInput)
 //  } 
+// 
 
  valueChanged(e: number) {
   const rounded = Math.round(e)/100;

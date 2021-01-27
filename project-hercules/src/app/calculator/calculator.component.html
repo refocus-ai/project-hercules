@@ -1,11 +1,11 @@
 <app-header></app-header>
-    <div class="container">
         <div class="row" [@fadeInAnimation]>
             <div class="col-lg-6 order-lg-12"><app-calculator-form  *ngIf="showCalculatorForm" (next)="toggle()"></app-calculator-form>
                 <app-contact-form *ngIf="showContactForm" (goBack)="toggle()"> </app-contact-form ></div>
-            <div class="col-lg-6 order-lg-1 fade-in" id="new">
-                <div id="one" class="fade-in one container-header">
-                    <br><br>
+            <div  class="col-lg-6 order-lg-1 fade-in" id="new">
+                <div id="page-text" class="row" >
+                <div  id="one" class="fade-in one container-header">
+                    <br>
                     <h1>Unlock Your Data</h1> 
                         <h3>Use the Data Calculator to find out the quality of your data to 
                             sell more, churn less, and provide an exceptional customer experience every time</h3>
@@ -31,4 +31,4 @@
                 </div>
             </div>
         </div>
-      </div>
+        </div>

@@ -10,11 +10,7 @@ body{
         -webkit-text-fill-color: transparent;
         font-weight: 700;
     }      
-    h2{
-        font-size: 24px;
-        font-weight: 700;
-        max-width: 400px;
-        }
+   
     h3{
         font-weight: 400;
         font-size: 18px;
@@ -24,6 +20,17 @@ body{
        
 }
 
+h2{
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 400px;
+
+  }
+
+#page-text{
+  margin-left: 64px;
+  margin-right: 52px;
+}
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -113,14 +120,13 @@ p {
 .btn{
     background-color: #E88845 !important;
     width: 100%;
-    margin: 8px;
     color: #ffffff !important;
 }
 
 .btn-next{
   margin-top: 30px;
-  width: 93.5%;
-  margin-left: 15px;
+  // width: 93.5%;
+  // margin-left: 15px;
 }
 
 .btn-link {
@@ -202,6 +208,8 @@ p {
   padding: 24px 24px;
   padding-left: 48px !important;
   padding-right: 48px !important;
+  margin-right: 64px;
+  max-width: 600px;
 }
 
 .form-check{
@@ -307,9 +315,9 @@ textarea.form-control {
   resize: none;
 }
 
-:host {
-  display: block;
-}
+// :host {
+//   display: block;
+// }
 
 .open-close-container {
   border: 1px solid #dddddd;
@@ -322,5 +330,5 @@ textarea.form-control {
 .punk {
   position: -webkit-sticky;
   position: sticky;
-  top: 4rem;
+  top: 7.5rem;
 }

@@ -1,1 +1,334 @@
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+body{
+    background-color: #ffffff;
+    font-family: 'IBM Plex Sans', sans-serif !important;  
+    h1{
+        background: -webkit-linear-gradient(360deg,#F06E13, #AF5184);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }      
+   
+    h3{
+        font-weight: 400;
+        font-size: 18px;
+        color: #828282;
+    }
+    
+       
+}
+
+h2{
+  font-size: 24px;
+  font-weight: 700;
+  max-width: 400px;
+
+  }
+
+#page-text{
+  margin-left: 64px;
+  margin-right: 52px;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration: .8s;
+	-moz-animation-duration: .8s;
+	animation-duration: .8s;
+}
+
+.fade-in.one {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+
+.fade-in.two {
+-webkit-animation-delay: 1.2s;
+-moz-animation-delay:1.2s;
+animation-delay: 1.2s;
+}
+
+.fade-in.three {
+-webkit-animation-delay: 1.6s;
+-moz-animation-delay: 1.6s;
+animation-delay: 1.6s;
+}
+
+.fade-in.four {
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+  }
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: transparent;
+  color: #E88845;
+  text-decoration: none;
+}
+
+
+p {
+  margin-top: 20px;
+  opacity: 0.7;
+  color: black;
+  text-align: left;
+  font-size: 14px;
+}
+
+.go-back{
+  color: #A5A5A5;
+}
+.go-back:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.input-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.calculator-header{
+    font-size: 14px;
+    font-weight: 700;
+    color: #5B5B5B;
+}
+
+.btn{
+    background-color: #E88845 !important;
+    width: 100%;
+    color: #ffffff !important;
+}
+
+.btn-next{
+  margin-top: 30px;
+  // width: 93.5%;
+  // margin-left: 15px;
+}
+
+.btn-link {
+    background-color: transparent;
+    color: blueviolet;
+    border: none;
+}
+
+.slidecontainer {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+      }
+
+  .slider {
+    width: 100%;
+  }
+
+
+
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    input[type='range'] {
+      overflow: hidden;
+      width: 100%;
+      height: 16px;
+      border-radius: 8px; 
+      -webkit-appearance: none;
+      background-color: #cecece;
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+      height: 16px;
+      -webkit-appearance: none; /* Override default CSS styles */
+      color: #E88845;
+      margin-top: -1px;
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: white;
+      box-shadow: -220px 0 0 210px #E88845;
+      border: rgba(0, 0, 0, 0.29);
+      border-style: solid;
+      border-width: thin;
+      width: 16px; /* Set a specific slider handle width */
+      height: 16px; /* Slider handle height */
+      border-radius: 50%; 
+      cursor: pointer; /* Cursor on hover */
+    }
+    
+    }
+    /** FF*/
+    input[type="range"]::-moz-range-progress {
+      background-color:#E88845; 
+    }
+    input[type="range"]::-moz-range-track {  
+      background-color: white;
+    }
+    /* IE*/
+    input[type="range"]::-ms-fill-lower {
+      background-color:#E88845; 
+    }
+    input[type="range"]::-ms-fill-upper {  
+      background-color: white;
+    }
+  
+
+.form-border{
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 21px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 8px;
+  padding: 24px 24px;
+  padding-left: 48px !important;
+  padding-right: 48px !important;
+  margin-right: 64px;
+  max-width: 600px;
+}
+
+.form-check{
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+.form-check-container {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.form-control{
+  margin-top: 8px;
+}
+
+.form-select{
+  margin-top: 8px;
+}
+
+input[type=text] {
+  background-color: #fbfbfb;
+  justify-content: space-between;
+}
+input[type=email] {
+  background-color: #fbfbfb;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fbfbfb;
+  border-radius: 4px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid #D1D1D1;
+  margin-top: 0.1rem;
+  margin-left: -1.5rem;
+}
+
+input[type="checkbox"]:checked {
+  background: #E88845;
+}
+
+input[type="checkbox"]:hover {
+  filter: brightness(90%);
+}
+
+input[type="checkbox"]:after {
+  content: '\2713\0020';
+  position: relative;
+  left: 22%;
+  bottom: 8%;
+  color:white;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: none;
+}
+
+input[type="checkbox"]:checked:after {
+  display: block;
+}
+  
+select {
+  width: 200px;
+  height: 38px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 0;
+  background: #fbfbfb url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='black'/></g></svg>") no-repeat;
+  background-position: right 5px top 50%;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  color:black;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: color 0.3s ease, background-color 0.3s ease, border-bottom-color 0.3s ease;
+  padding-left: 20px;
+}
+
+/* For IE <= 11 */
+select::-ms-expand {
+  display: none; 
+}
+
+select:hover,
+select:focus {
+  color: black;
+  border-bottom-color: #DCDCDC;
+  border-radius: 4px;
+}
+
+textarea.form-control {
+  background-color: #fbfbfb;
+  resize: none;
+}
+
+// :host {
+//   display: block;
+// }
+
+.open-close-container {
+  border: 1px solid #dddddd;
+  margin-top: 1em;
+  padding: 20px 20px 0px 20px;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+}
+.punk {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 7.5rem;
+}

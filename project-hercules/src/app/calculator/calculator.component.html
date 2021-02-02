@@ -1,25 +1,34 @@
 <app-header></app-header>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 order-lg-12"><app-calculator-form *ngIf="showCalculatorForm "></app-calculator-form>
-                <app-contact-form> </app-contact-form></div>
-            <div class="col-lg-6 order-lg-1">
-                <div>
-                    <h1>Some Catchy Title About Customer Data</h1>
-                        <h5>Some other catchy subtitle text will go here to describe more about data.</h5>
+        <div class="row" [@fadeInAnimation]>
+            <div class="col-lg-6 order-lg-12"><app-calculator-form  *ngIf="showCalculatorForm" (next)="toggle()"></app-calculator-form>
+                <app-contact-form *ngIf="showContactForm" (goBack)="toggle()"> </app-contact-form ></div>
+            <div  class="col-lg-6 order-lg-1 fade-in" id="new">
+                <div id="page-text" class="row" >
+                <div  id="one" class="fade-in one container-header">
+                    <br>
+                    <h1>Unlock Your Data</h1> 
+                        <h3>Use the Data Calculator to find out the quality of your data to 
+                            sell more, churn less, and provide an exceptional customer experience every time</h3>
                 </div>
-                <div>
-                    <h3>Title About Data Talking Point</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis earum sequi mollitia architecto aperiam ducimus non quae quos optio, qui id esse aspernatur quis aliquid quod nihil quia at soluta?</p>
+                <br><br>
+                <div id="two" class="fade-in two">
+                    <h2>Supercharge your sales </h2>
+                        <p>Empowering your sales teams by collecting the right data starts by understanding the data you have today. Not all data is created or gathered equally. How structured and complete your data matters. 
+                        <br>
+                        <br>
+                        With the right data, your sales department will both generate and use its own data, increasing the efficiency and close ratios. Use the Data Calculator to understand how usable your data is today in predicting when and what your customers and prospects will buy.
+                        </p>
                 </div>
-                <div>
-                    <h3>Another Talking Point About Data</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quaerat dicta maxime debitis deserunt omnis. Dolor fugiat harum vel, unde enim incidunt eligendi, cumque doloribus explicabo minus, corrupti reprehenderit? Nam!</p>
+                <div id="three" class="fade-in three">
+                    <h2>Retain more customers</h2>
+                        <p>Every customer has different needs, and how you can best retain them is already locked within your data. Tailor each customer retention strategy individually, using your data to identify trends and make business decisions. Use the Data Calculator to understand how quickly your business can start using its data to boost retention.
+                        </p>
                 </div>
-                <div>      
-                    <h3>Yet Another Talking Point About Data</h3>
-                        <p>Lorem ipsum, dolor sit amet 
+                <div id="four" class="fade-in four">      
+                    <h2>Enhance the Customer Experience</h2>
+                        <p>Individualize your company’s sales strategy to approach a prospect at exactly the right time, providing an amazing customer experience. When a purchase is top-of-mind for your customer, closing the sale is always simpler. Identify the best time to approach your sale using the data your company already has in its CRM, policy-management system, or other repository. Use the Data Calculator to see how many opportunities your company has to close new business and provide a better experience.
+                        </p>
                 </div>
             </div>
         </div>
-      </div>
+        </div>

@@ -48,7 +48,6 @@ export class CalculatorFormComponent implements OnInit {
 //    console.log(roundDataInput)
 //  } 
 
-
 //     const attrInput = this.attributesSum += parseFloat(event.target.value);
 //     const divideAttrInput = (Math.floor(attrInput)/30) *10;
 //     console.log(divideAttrInput)

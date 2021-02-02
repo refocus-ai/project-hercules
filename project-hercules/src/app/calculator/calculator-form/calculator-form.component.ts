@@ -32,62 +32,10 @@ export class CalculatorFormComponent implements OnInit {
   public locationArray = ["Database", "Google Sheets", "Microsoft Excel Spreadsheet", "Other"];
   public dataLocation: any;
 
-  public saveUsername: any;
-  public saveUsernameTwo: any;
-  public saveUsernameThree: any;
-
-  public onSaveUsernameChanged(value: any){
-    this.saveUsername = value;
-     if (!value) {
-      this.checkSum -= 15;
-     } else if (value && this.checkSum < 20) {
-      this.checkSum += 20;
-     } else if (value && this.checkSum >= 20) {
-       this.checkSum += 5;
-     } else if (!value && this.checkSum <= 20) {
-      this.checkSum -= 20;
-     } else if (!value && this.checkSum >= 20) {
-      this.checkSum -= 5;
-     }
-     console.log(this.checkSum)
- }
-
- public onSaveUsernameTwoChanged(value: any){
-  this.saveUsernameTwo = value;
-   if(value && this.checkSum < 20) {
-     this.checkSum += 20;
-   } else if (value && this.checkSum >= 20) {
-     this.checkSum += 5;
-   } else if (!value && this.checkSum <= 20) {
-    this.checkSum -= 20;
-   } else if (!value && this.checkSum >= 20) {
-    this.checkSum -= 5;
-   }
-   console.log(this.checkSum)
-}
-
-public onSaveUsernameThreeChanged(value: any){
-  this.saveUsernameThree = value;
-   if(value && this.checkSum < 20) {
-     this.checkSum += 20;
-   } else if (value && this.checkSum >= 20) {
-     this.checkSum += 5;
-   } else if (!value && this.checkSum <= 20) {
-    this.checkSum -= 20;
-   } else if (!value && this.checkSum >= 20) {
-    this.checkSum -= 5;
-   }
-   console.log(this.checkSum)
-}
 
   showFrequencyInput = false;
   showLocationInput = false;
-  dataPointsSum = 0;
-  attributesSum = 0;
-  checkSum =  0;
-  sliderSum = 0;
 
-  
   constructor() { }
 
   ngOnInit(): void {
@@ -100,7 +48,6 @@ public onSaveUsernameThreeChanged(value: any){
 //    console.log(roundDataInput)
 //  } 
 
-//  changeAttributes(event: { target: { value: any; }; }) {
 //     const attrInput = this.attributesSum += parseFloat(event.target.value);
 //     const divideAttrInput = (Math.floor(attrInput)/30) *10;
 //     console.log(divideAttrInput)
@@ -133,55 +80,56 @@ public onSaveUsernameThreeChanged(value: any){
     }
 }
 
-scoreCalculation() {
-  const scoreTotal = this.dataPointsSum + this.attributesSum + this.checkSum + this.sliderSum;
-  return scoreTotal
-}
-
-
-
   toggle() {
     this.next.emit(null)
   }
-
-  onSubmit(value: any) {
-    //get the value by its property
-    console.log("Attributes: " + value.attributes);
-    console.log("Data Points: " + value.dataPoints);
-    console.log("Slider: " + value.slider);
-  }
-
 }
-
-
-// Use ngModel for 2 way binding on the checks
-// Math.log10() -- built in funtion
-// **** app.filter("round")?? or Math.floor??
-// Math.max? for max values
-// variable for each category to that we can sum all four up at the end?
-
-
-// Data score has a max value of 100; the higher the score the better
-// Dtypes (30 pts), # data pts (20 pts), # attributes (10 pts), and completion (40 pts)
-
-// Here are the calculations for each category:
-  //  Data Type
-  // 20 points for one data type selected
-  // 25 points for two data types selected
-  // 30 points for all three data points selected
-  // ***** If the binary data type option is not selected, deduct 10 points from the total score
   
-  // Number of Data Points
-    // Take the log, base 10, of the number of data points
-    // Divide it by 4
-    // Value from the above two can be no greater than 1. If greater, round down to 1
-    // Multiply by 20
+// categories = {
+//   'checks': [1, 1, 1],
+//   'dataPoints': 6000,
+//   'dataAttributes': 30,
+//   'percComplete': 1
+// }
 
-  // Number of Attributes
-    // Divide the number of attributes by 30
-    // Value of the division can be no greater than 1. If greater, round down to 1
-    // Multiply by 10
 
-  // Percentage of Data Complete
-    // Multiply the percentage by 40 (percentage should be in decimal form; ie - 97% = 0.97)
-  
+
+// function funcName(categories) {
+//   let total = 0;
+//   let totalChecks = categories.checks.reduce((count, val) => (val === 1 ? count + 1 : count), 0);
+//   let checkScore = 0;
+//   switch (totalChecks) {
+//     case 1:
+//       checkScore = 20;
+//       break;
+//     case 2:
+//       checkScore = 25;
+//       break;
+//     case 3:
+//       checkScore = 30;
+//       break;
+//   }
+//   // No binary
+//   if (categories.checks[0] === 0 && checkScore > 0) {
+//     checkScore -= 10;
+//   }
+//   total += checkScore;
+
+//   let pointsScore = ((Math.log10(categories.dataPoints)) / 4);
+//   let points = (pointsScore > 1 ? 1 : pointsScore) * 20;
+//   /* if score is over one, round down */
+//   total += points;
+
+//   let attrScore = (categories.dataAttributes / 30);
+//   let attrs = (attrScore > 1 ? 1 : attrScore) * 10;
+//   /* if score is over one, round down */
+//   total += attrs;
+
+//   let percScore = categories.percComplete * 40;
+
+
+//   total += percScore;
+
+//   return total;
+// }
+// console.log(funcName(categories));

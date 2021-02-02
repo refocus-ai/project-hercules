@@ -1,7 +1,10 @@
 <app-header></app-header>
         <div class="row" [@fadeInAnimation]>
-            <div class="col-lg-6 order-lg-12"><app-calculator-form  *ngIf="showCalculatorForm" (next)="toggle()"></app-calculator-form>
-                <app-contact-form *ngIf="showContactForm" (goBack)="toggle()"> </app-contact-form ></div>
+            <div class="col-lg-6 order-lg-12">
+                <app-calculator-form  *ngIf="showCalculatorForm" (next)="toggle()"></app-calculator-form>
+                <app-contact-form *ngIf="showContactForm" (submit)="toggleSuccess()" (goBack)="toggle()"> </app-contact-form >
+                <app-success-form *ngIf="showSuccessForm" (back)="toggleSuccess()"></app-success-form>
+            </div>
             <div  class="col-lg-6 order-lg-1 fade-in" id="new">
                 <div id="page-text" class="row" >
                 <div  id="one" class="fade-in one container-header">

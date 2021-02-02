@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-success-form',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuccessFormComponent implements OnInit {
 
+  @Output() back: EventEmitter <any> = new EventEmitter <any> ();
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+//   toggleSuccess() {
+//     this.back.emit(null)
+// }
 }

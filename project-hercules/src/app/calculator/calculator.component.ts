@@ -41,6 +41,7 @@ export class CalculatorComponent implements OnInit {
 
   showCalculatorForm =  true;
   showContactForm = false;
+  showSuccessForm = false;
 
   
   constructor() { }
@@ -51,9 +52,12 @@ export class CalculatorComponent implements OnInit {
 
   toggle() { 
     this.showCalculatorForm = !this.showCalculatorForm; 
+    this.showContactForm = !this.showContactForm;   
+  }
+  toggleSuccess() { 
     this.showContactForm = !this.showContactForm; 
-
-}
+    this.showSuccessForm = !this.showSuccessForm;   
+  }
 
 
   

@@ -12,11 +12,11 @@ import { SuccessFormComponent} from './calculator/success-form/success-form.comp
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { LottieModule } from 'ngx-lottie';
+import { LottieAnimationViewModule } from 'ng-lottie';
 import player from 'lottie-web';
-
-
+ 
 export function playerFactory() {
-  return player;
+  return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
 }
 
 @NgModule({
@@ -26,16 +26,17 @@ export function playerFactory() {
     ContactFormComponent,
     CalculatorFormComponent,
     SuccessFormComponent,
-    HeaderComponent,
-    LottieModule,
-    [LottieModule.forRoot({ player: playerFactory })],
-  ],
+    HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    [LottieModule.forRoot({ player: playerFactory })],
+    LottieAnimationViewModule.forRoot(),
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

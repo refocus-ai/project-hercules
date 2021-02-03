@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
 
 @Component({
   selector: 'app-success-form',
@@ -7,6 +8,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SuccessFormComponent implements OnInit {
 
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
+  }
+  
   @Output() back: EventEmitter <any> = new EventEmitter <any> ();
 
 
@@ -15,7 +20,7 @@ export class SuccessFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//   toggleSuccess() {
-//     this.back.emit(null)
-// }
+  toggleSuccess() {
+    this.back.emit(null)
+}
 }

@@ -8,12 +8,12 @@ import {
   group,
   // ...
 } from '@angular/animations';
-import { AnimationItem } from 'lottie-web';
-import { AnimationOptions } from 'ngx-lottie';
+// import { AnimationItem } from 'lottie-web';
+// import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-calculator',
-  template: `<ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>`,
+  // template: `<ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>`,
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
   animations: [
@@ -41,13 +41,6 @@ import { AnimationOptions } from 'ngx-lottie';
 
 export class CalculatorComponent implements OnInit {
 
-  options: AnimationOptions = {
-    path: '/assets/animation.json',
-  };
-
-  animationCreated(animationItem: AnimationItem): void {
-    console.log(animationItem);
-  }
 
   showCalculatorForm =  true;
   showContactForm = false;

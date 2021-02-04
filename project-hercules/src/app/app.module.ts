@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { LottieModule } from 'ngx-lottie';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import player from 'lottie-web';
+import { HttpClientModule } from '@angular/common/http';
  
 export function playerFactory() {
   return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
@@ -35,6 +36,7 @@ export function playerFactory() {
     FormsModule,
     [LottieModule.forRoot({ player: playerFactory })],
     LottieAnimationViewModule.forRoot(),
+    HttpClientModule
   
     
   ],

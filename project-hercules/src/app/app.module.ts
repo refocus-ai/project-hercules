@@ -11,6 +11,7 @@ import { CalculatorFormComponent } from './calculator/calculator-form/calculator
 import { SuccessFormComponent} from './calculator/success-form/success-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

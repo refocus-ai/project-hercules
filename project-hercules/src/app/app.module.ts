@@ -11,13 +11,6 @@ import { CalculatorFormComponent } from './calculator/calculator-form/calculator
 import { SuccessFormComponent} from './calculator/success-form/success-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
-import { LottieModule } from 'ngx-lottie';
-import player from 'lottie-web';
-
-
-export function playerFactory() {
-  return player;
-}
 
 @NgModule({
   declarations: [
@@ -27,8 +20,6 @@ export function playerFactory() {
     CalculatorFormComponent,
     SuccessFormComponent,
     HeaderComponent,
-    LottieModule,
-    [LottieModule.forRoot({ player: playerFactory })],
   ],
   imports: [
     BrowserModule,

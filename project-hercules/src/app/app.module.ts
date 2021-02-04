@@ -11,14 +11,8 @@ import { CalculatorFormComponent } from './calculator/calculator-form/calculator
 import { SuccessFormComponent} from './calculator/success-form/success-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
-import { LottieModule } from 'ngx-lottie';
-import { LottieAnimationViewModule } from 'ng-lottie';
-import player from 'lottie-web';
 import { HttpClientModule } from '@angular/common/http';
  
-export function playerFactory() {
-  return import(/* webpackChunkName: 'lottie-web' */ 'lottie-web');
-}
 
 @NgModule({
   declarations: [
@@ -33,12 +27,7 @@ export function playerFactory() {
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
-    FormsModule,
-    [LottieModule.forRoot({ player: playerFactory })],
-    LottieAnimationViewModule.forRoot(),
-    HttpClientModule
-  
-    
+    FormsModule,    
   ],
   providers: [],
   bootstrap: [AppComponent]

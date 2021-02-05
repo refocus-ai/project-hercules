@@ -23,6 +23,7 @@ import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
 
 
 export class CalculatorFormComponent implements OnInit {
+  nrSelect = 47
 
   @Output() next: EventEmitter <any> = new EventEmitter <any> ();
   

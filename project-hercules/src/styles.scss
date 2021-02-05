@@ -111,11 +111,11 @@ p {
   text-decoration: none;
 }
 
-.input-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+// .input-container{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
 
 .calculator-header{
     font-size: 14px;
@@ -239,9 +239,14 @@ p {
 
 .form-select{
   margin-top: 8px;
+  background-color: #fbfbfb;
 }
 
 input[type=text] {
+  background-color: #fbfbfb;
+  justify-content: space-between;
+}
+input[type=number] {
   background-color: #fbfbfb;
   justify-content: space-between;
 }
@@ -287,7 +292,6 @@ input[type="checkbox"]:checked:after {
 }
   
 select {
-  width: 200px;
   height: 38px;
   font-size: 12px;
   cursor: pointer;

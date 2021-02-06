@@ -12,6 +12,7 @@ import { SuccessFormComponent} from './calculator/success-form/success-form.comp
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 @NgModule({
   declarations: [
@@ -34,4 +35,3 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-

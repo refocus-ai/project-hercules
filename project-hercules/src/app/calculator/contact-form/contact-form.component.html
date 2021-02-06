@@ -1,27 +1,36 @@
 <div class="container form-border punk">
-    <form action="">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
         <h2>ReFocus Data Strength Calculator</h2>
         <div class="mb-3">
-            <label for="full-name" class="form-label calculator-header">Full Name</label>
-            <input type="text" class="form-control" id="full-name">
+            <label for="fullName" class="form-label calculator-header">Full Name</label>
+            <input required type="text" class="form-control" id="fullName" name="fullName" [(ngModel)]="model.fullName" required>
         </div>
         <div class="mb-3">
             <label for="Company" class="form-label calculator-header">Company</label>
-            <input type="text" class="form-control" id="Company">
+            <input required type="text" class="form-control" id="Company" name="company" [(ngModel)]="model.company">
         </div>
-        <div class="mb-3">
+        <div class="mb-3 form-group">
             <label for="email" class="form-label calculator-header">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="lauren@refocusai.com">
+            <input required type="email" class="form-control" id="email" placeholder="lauren@refocusai.com" name="email" [(ngModel)]="model.email" required  pattern="[^ @]*@[^ @]*" #email="ngModel">
+            <div class="form-control-feedback"
+		     *ngIf="email.errors && (email.dirty || email.touched)">
+			<p style="color:red" *ngIf="email.errors.required">Email is required</p>
+			<p *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
+		</div>
+            <pre>Valid? {{ f.form.controls.email?.valid }}</pre>
+            <pre>Dirty?  {{ f.form.controls.email?.dirty }}</pre>
+            <pre>Touched?  {{ f.form.controls.email?.touched }}</pre>
         </div>
         <div class="mb-3 form-group">
             <label for="user-questions" class="form-label calculator-header">What else would you like to know about your data?</label>
-            <textarea class="form-control" id="user-questions" rows="3"></textarea>
+            <textarea class="form-control" id="user-questions" rows="3" name="user-questions" [(ngModel)]="model.questions"></textarea>
         </div>
         <div>
-            <button (click)="toggleSuccess()" type="button" class="btn container">Submit</button>
+            <button (click)="onSubmit()" (click)="toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>
         </div>
         <div>
             <span (click)="toggle()" class="go-back"> Go Back</span>
         </div>
     </form>
+    <pre>{{ f.value | json }}</pre>
 </div>

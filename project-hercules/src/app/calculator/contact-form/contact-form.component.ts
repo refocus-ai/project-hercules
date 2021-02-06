@@ -1,4 +1,15 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+
+class Signup {
+  constructor(
+    public fullName:string = '',
+    public company:string = '',
+    public email:string = '',
+    public questions:string = '',
+  ) {
+
+  }
+}
 
 @Component({
   selector: 'app-contact-form',
@@ -6,6 +17,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent implements OnInit {
+
+  model: Signup = new Signup();
+  @ViewChild('f') form: any;
 
   @Output() submit: EventEmitter <any> = new EventEmitter <any> ();
 
@@ -22,6 +36,13 @@ export class ContactFormComponent implements OnInit {
 
   toggle() {
       this.goBack.emit(null)
+  }
+  onSubmit() {
+    if (this.form.valid) {
+      console.log("Form Submitted!");
+      this.form.reset();
+    }
+    
   }
 
 }

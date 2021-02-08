@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import {
   trigger,
   state,
@@ -10,6 +10,17 @@ import {
 import { ValueTransformer } from '@angular/compiler/src/util';
 import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
 
+class dataEntry {
+  constructor(
+    public dataPoints:string = '',
+    public attributes:string = '',
+    public completion:string = '',
+    public updateFreq:string = '',
+    public dataLocation:string = '',
+  ) {
+
+  }
+}
 
 @Component({
   
@@ -24,6 +35,8 @@ import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
 
 export class CalculatorFormComponent implements OnInit {
   
+  model: dataEntry = new dataEntry();
+  @ViewChild('f') form: any;
 
   @Output() next: EventEmitter <any> = new EventEmitter <any> ();
   
@@ -71,4 +84,14 @@ export class CalculatorFormComponent implements OnInit {
   toggle() {
     this.next.emit(null)
   }
+
+  onSubmit() {
+    if (this.form.valid) {
+      console.log("Form Submitted!");
+      console.log(this.form.value);
+      this.form.reset();
+    }
+    
+  }
+
 }

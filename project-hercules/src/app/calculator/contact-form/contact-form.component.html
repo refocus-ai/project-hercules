@@ -3,7 +3,11 @@
         <h2>ReFocus Data Strength Calculator</h2>
         <div class="mb-3">
             <label for="fullName" class="form-label calculator-header">Full Name</label>
-            <input required type="text" class="form-control" id="fullName" name="fullName" [(ngModel)]="model.fullName" required>
+            <input required type="text" class="form-control" id="fullName" name="fullName" [(ngModel)]="model.fullName" required #fullName="ngModel">
+            <div class="form-control-feedback"
+			     *ngIf="fullName.errors && (fullName.dirty || fullName.touched)">
+				<p style="color:red" *ngIf="fullName.errors.required">Full name is required</p>
+			</div>
         </div>
         <div class="mb-3">
             <label for="Company" class="form-label calculator-header">Company</label>

@@ -37,9 +37,11 @@ export class ContactFormComponent implements OnInit {
   toggle() {
       this.goBack.emit(null)
   }
+  
   onSubmit() {
     if (this.form.valid) {
       console.log("Form Submitted!");
+      console.log(this.form.value);
       this.form.reset();
     }
     

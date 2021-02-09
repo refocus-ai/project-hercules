@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import {
   trigger,
   state,
@@ -12,11 +13,14 @@ import { checkFolderExists } from '@scullyio/scully/src/lib/utils';
 
 class dataEntry {
   constructor(
+    public checkboxBinary:any = '',
+    public checkboxNumerical:any = '',
+    public checkboxDates:any = '',
     public dataPoints:string = '',
     public attributes:string = '',
     public completion:string = '',
-    public updateFreq:string = '',
-    public dataLocation:string = '',
+    public updateFreq:any = '',
+    public dataLocation:any = '',
   ) {
 
   }
@@ -64,7 +68,6 @@ export class CalculatorFormComponent implements OnInit {
 
   dropdownChangeOne(val: any) {
     let value = val["target"]["value"];
-    console.log(val.target.value)
     if(value==="Other") {
       this.showFrequencyInput = true;
     } else {

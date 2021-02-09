@@ -1,19 +1,19 @@
 <div class="form-border punk">
-    <form action="" novalidate #f="ngForm" (ngSubmit)="onSubmit()">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit()">
         <h2 class="form-header">ReFocus Data Strength Calculator</h2>      
                 <label for="calculator-form" class="calculator-header">What type of data do you gather? (Check all that apply)</label>
                 <div class="container form-check-container pl-1">
                     <div class="form-check">  
-                            <input class="form-check-input" type="checkbox" value="" name="checkbox-binary" id="checkbox-binary">
-                            <label class="form-check-label" for="checkbox-binary">Data that is yes/no, 1/0, or other binary values</label>
+                            <input class="form-check-input form-control" type="checkbox" value="" name="checkbox-binary" id="checkbox-binary" [(ngModel)]="model.checkboxBinary">
+                            <label class="form-label" for="checkbox-binary">Data that is yes/no, 1/0, or other binary values</label>
                         </div>
                         <div class="form-check">   
-                            <input class="form-check-input" type="checkbox" value="" name="checkbox-numerical" id="checkbox-numerical">
-                            <label class="form-check-label" for="checkbox-numerical">Data on pricing, sizing, or other numerical values </label>
+                            <input class="form-check-input form-control" type="checkbox" value="" name="checkbox-numerical" id="checkbox-numerical" [(ngModel)]="model.checkboxNumerical">
+                            <label class="form-label" for="checkbox-numerical">Data on pricing, sizing, or other numerical values </label>
                         </div>
                         <div class="form-check">  
-                            <input class="form-check-input" type="checkbox" value="" name="checkbox-dates" id="checkbox-dates">
-                            <label class="form-check-label" for="checkbox-dates">Data for birth dates, start & end dates, or other calendar date values</label>
+                            <input class="form-check-input form-control" type="checkbox" value="" name="checkbox-dates" id="checkbox-dates" [(ngModel)]="model.checkboxDates">
+                            <label class="form-label" for="checkbox-dates">Data for birth dates, start & end dates, or other calendar date values</label>
                         </div>     
                     </div>  
                     
@@ -24,7 +24,11 @@
                                     <div class="col-12">
                                         <div>
                                             <label for="data-points" class="form-label calculator-header">Number of Data Points</label>
-                                            <input required type="number" name="data-points"  class="form-control " id="data-points" name="dataPoints" ngModel>
+                                            <input required type="number" name="data-points"  class="form-control " id="data-points" name="dataPoints" [(ngModel)]="model.dataPoints" #dataPoints="ngModel">
+                                            <div class="form-control-feedback"
+                                            *ngIf="dataPoints.errors && (dataPoints.dirty || dataPoints.touched)">
+                                           <p style="color:red" *ngIf="dataPoints.errors.required">Enter the number of data points to continue</p>
+                                       </div>
                                         </div>
                                     </div>
                                 </div>
@@ -39,18 +43,18 @@
 
                     <div class="slidecontainer">
                     <label for="myRange" class="form-label calculator-header">How complete is your data?</label>
-                    <input type="range" name="myRange" min="0" max="100" value="0" id="myRange" class="form-range slider" name="slider" ngModel oninput="this.nextElementSibling.value = this.value" >
+                    <input required type="range" name="myRange" min="0" max="100" value="0" id="myRange" class="form-range form-control slider" name="slider" ngModel oninput="this.nextElementSibling.value = this.value" >
                     <output>50</output> <span>%</span>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="row">
                             <div class="col-12">
-                                <div>
-                                    <label for="data-update-frequency" class="calculator-header">Data Update Frequency</label>
-                                    <select id="data-update-frequency" name="data-update-frequency" class="form-select form-control" aria-label="Default select example" [(ngModel)]="updateFreq" [ngModelOptions]="{standalone: true}" (change)="dropdownChangeOne($event)">
+                                <div class="form-group">
+                                    <label for="data-update-frequency" class="calculator-header form-label">Data Update Frequency</label>
+                                    <select  id="data-update-frequency" name="data-update-frequency" class="form-select form-control" aria-label="Default select example" [(ngModel)]="updateFreq"  (change)="dropdownChangeOne($event)">
                                         <option disabled selected value="undefined">Choose frequency</option>
-                                        <option required *ngFor="let o of freqArray" [value]="o" >{{ o }}</option>
+                                        <option *ngFor="let o of freqArray" [value]="o" >{{ o }}</option>
                                       </select>
                                 </div>
                             </div>
@@ -65,10 +69,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div>
-                                    <label for="data-location" class="calculator-header">Location of Data</label>
+                                    <label for="data-location" class="calculator-header form-label">Location of Data</label>
                                     <select id="data-location" name="data-location"  class="form-select form-control" aria-label="Default select example" [(ngModel)]="dataLocation" [ngModelOptions]="{standalone: true}" (change)="dropdownChangeTwo($event)" >
                                         <option disabled selected value="undefined">Choose Location</option>
-                                        <option required *ngFor="let o of locationArray" [value]="o" >{{ o }}</option>
+                                        <option *ngFor="let o of locationArray" [value]="o" >{{ o }}</option>
                                       </select>
                                 </div>
                             </div>
@@ -79,7 +83,8 @@
                             </div>
                         </div>
                     </div>
-                    <button  type="button" (click)="toggle()" class="btn btn-next container" id="check">Next</button>
+                    <button  type="button" (click)="onSubmit()" (click)="toggle()" class="btn btn-next container" id="check">Next</button>
                 </div>
     </form>
+    <pre>{{ f.value | json }}</pre>
 </div>

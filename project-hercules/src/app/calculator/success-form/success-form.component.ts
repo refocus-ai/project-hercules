@@ -19,7 +19,7 @@ export class SuccessFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//   toggleSuccess() {
-//     this.back.emit(null)
-// }
+  toggleSuccess() {
+    this.back.emit(null)
+}
 }

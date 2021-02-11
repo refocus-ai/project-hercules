@@ -43,6 +43,8 @@ export class CalculatorFormComponent implements OnInit {
   @ViewChild('f') form: any;
 
   @Output() next: EventEmitter <any> = new EventEmitter <any> ();
+
+  @Output() f: EventEmitter <any> = new EventEmitter <any> ();
   
   public freqArray = ["Once a week", "Biweekly", "Once a month", "Other"];
   public updateFreq: any;
@@ -61,7 +63,6 @@ export class CalculatorFormComponent implements OnInit {
 
  valueChanged(e: number) {
   const rounded = Math.round(e)/100;
-  // when return, code becomes unreachable
   console.log(rounded*40);
 }
 
@@ -92,7 +93,6 @@ export class CalculatorFormComponent implements OnInit {
     if (this.form.valid) {
       console.log("Form Submitted!");
       console.log(this.form.value);
-      this.form.reset();
     }
     
   }

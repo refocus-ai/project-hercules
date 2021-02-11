@@ -182,13 +182,13 @@ p {
     input[type='range']::-webkit-slider-thumb {
       -webkit-appearance: none;
       background: white;
-      box-shadow: -220px 0 0 210px #E88845;
+      box-shadow: -260px 0 0 250px #E88845;
       border: rgba(0, 0, 0, 0.29);
       border-style: solid;
       border-width: thin;
       width: 16px; /* Set a specific slider handle width */
       height: 16px; /* Slider handle height */
-      border-radius: 50%; 
+      border-radius: 90%; 
       cursor: pointer; /* Cursor on hover */
     }
     

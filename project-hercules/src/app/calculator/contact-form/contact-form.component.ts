@@ -25,6 +25,8 @@ export class ContactFormComponent implements OnInit {
 
   @Output() goBack: EventEmitter <any> = new EventEmitter <any> ();
 
+  @Output() f: EventEmitter <any> = new EventEmitter <any> ();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -40,9 +42,8 @@ export class ContactFormComponent implements OnInit {
   
   onSubmit() {
     if (this.form.valid) {
-      console.log("Form Submitted!");
+      console.log("Form Submitted!");``
       console.log(this.form.value);
-      this.form.reset();
     }
     
   }

@@ -58,6 +58,10 @@ export class CalculatorComponent implements OnInit {
     this.showSuccessForm = !this.showSuccessForm;   
   }
 
+  setCalculatorData(calculatorData: any) {
+    console.log(calculatorData);
+  }
+
 
   
 }

@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     ScullyLibModule,
     BrowserAnimationsModule,
     FormsModule,    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

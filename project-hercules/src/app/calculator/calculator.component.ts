@@ -62,8 +62,13 @@ export class CalculatorComponent implements OnInit {
   setCalculatorData(calculatorData: any) {
     console.log(calculatorData);
   }
+  setContactData(contactData: any) {
+    console.log(contactData);
+}  
+  
 
   submitDataScore() {
+  
   let score = {
     "checks": [1, 1, 1],
     "dataPoints": 6000,
@@ -75,7 +80,8 @@ export class CalculatorComponent implements OnInit {
     "dataFrequency": "test",
     "dataLocation": "test",
     "additionalInfo": "test"
-  }  
+  }
+
     this._dataService.postDataScore(score).subscribe(response => {
       console.log(response)
     })

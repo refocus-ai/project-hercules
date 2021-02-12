@@ -10,9 +10,9 @@ import { ContactFormComponent } from './calculator/contact-form/contact-form.com
 import { CalculatorFormComponent } from './calculator/calculator-form/calculator-form.component';
 import { SuccessFormComponent} from './calculator/success-form/success-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
-import { FormsModule, FormGroup, FormControl } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+ 
 
 @NgModule({
   declarations: [
@@ -21,15 +21,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     ContactFormComponent,
     CalculatorFormComponent,
     SuccessFormComponent,
-    HeaderComponent,
-  ],
+    HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
     FormsModule,
-    FontAwesomeModule
+    FormsModule,    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

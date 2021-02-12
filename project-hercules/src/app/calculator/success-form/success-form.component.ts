@@ -11,6 +11,7 @@ export class SuccessFormComponent implements OnInit {
   faCoffee = faCoffee;
   faCheckSquare = faCheckSquare;
 
+  
   @Output() back: EventEmitter <any> = new EventEmitter <any> ();
 
 

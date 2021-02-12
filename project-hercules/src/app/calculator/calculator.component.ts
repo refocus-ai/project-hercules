@@ -8,6 +8,7 @@ import {
   group,
   // ...
 } from '@angular/animations';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-calculator',
@@ -43,7 +44,7 @@ export class CalculatorComponent implements OnInit {
   showSuccessForm = false;
 
   
-  constructor() { }
+  constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
   
@@ -62,6 +63,23 @@ export class CalculatorComponent implements OnInit {
     console.log(calculatorData);
   }
 
+  submitDataScore() {
+  let score = {
+    "checks": [1, 1, 1],
+    "dataPoints": 6000,
+    "dataAttributes": 30,
+    "percComplete": 1,
+    "customerEmail": "test",
+    "customerName": "test",
+    "customerCompany": "Test",
+    "dataFrequency": "test",
+    "dataLocation": "test",
+    "additionalInfo": "test"
+  }  
+    this._dataService.postDataScore(score).subscribe(response => {
+      console.log(response)
+    })
+  }
 
   
 }

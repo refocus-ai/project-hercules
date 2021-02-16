@@ -27,6 +27,8 @@ export class ContactFormComponent implements OnInit {
 
   @Output() contactFormDataOutput: EventEmitter <any> = new EventEmitter <any> ();
 
+  @Output() submitContactScore: EventEmitter <any> = new EventEmitter <any> ();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -39,14 +41,19 @@ export class ContactFormComponent implements OnInit {
   toggle() {
       this.goBack.emit(null)
   }
+
+  submitDataScore() {
+    this.submitContactScore.emit(null)
+  }
+  
   
   onSubmit() {
     if (this.form.valid) {
-      console.log("Form Submitted!");
-      console.log(this.form.value);
       this.contactFormDataOutput.emit(this.form.value)
+      console.log("Form Submitted!");
     }
-    
+
+  
   }
 
 }

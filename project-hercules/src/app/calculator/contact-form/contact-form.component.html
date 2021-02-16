@@ -21,20 +21,16 @@
 			<p style="color:red" *ngIf="email.errors.required">Email is required</p>
 			<p *ngIf="email.errors.pattern">Email must contain at least the @ character</p>
 		</div>
-            <pre>Valid? {{ f.form.controls.email?.valid }}</pre>
-            <pre>Dirty?  {{ f.form.controls.email?.dirty }}</pre>
-            <pre>Touched?  {{ f.form.controls.email?.touched }}</pre>
         </div>
         <div class="mb-3 form-group">
             <label for="user-questions" class="form-label calculator-header">What else would you like to know about your data?</label>
             <textarea class="form-control" id="user-questions" rows="3" name="user-questions" [(ngModel)]="model.questions"></textarea>
         </div>
         <div>
-            <button (click)="onSubmit()" (click)="toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>
+            <button (click)="onSubmit()" (click)="submitDataScore()" (click)="toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>
         </div>
         <div>
-            <span (click)="toggle()" class="go-back"> Go Back</span>
+            <span  (click)="toggle()" class="go-back"> Go Back</span>
         </div>
     </form>
-    <pre>{{ f.value | json }}</pre>
 </div>

@@ -46,6 +46,8 @@ export class CalculatorFormComponent implements OnInit {
 
   @Output() calculatorFormDataOutput: EventEmitter <any> = new EventEmitter <any> ();
   
+  @Output() submitCalcScore: EventEmitter <any> = new EventEmitter <any> ();
+
   public freqArray = ["Once a week", "Biweekly", "Once a month", "Other"];
   public updateFreq: any;
 
@@ -87,6 +89,10 @@ export class CalculatorFormComponent implements OnInit {
 
   toggle() {
     this.next.emit(null)
+  }
+
+  submitDataScore() {
+    this.submitCalcScore.emit(null)
   }
 
   onSubmit() {

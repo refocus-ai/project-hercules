@@ -24,15 +24,6 @@ import { DataService } from '../services/data.service';
           
       ],
   ),
-    // trigger('slideInOut', [
-    //   transition(':enter', [
-    //     style({transform: 'translateY(-100%)'}),
-    //     animate('1800ms ease-in', style({transform: 'translateY(0%)'}))
-    //   ]),
-    //   transition(':leave', [
-    //     animate('1800ms ease-in', style({transform: 'translateY(-100%)'}))
-    //   ])
-    // ])
   ]
   
 })
@@ -42,6 +33,19 @@ export class CalculatorComponent implements OnInit {
   showCalculatorForm =  true;
   showContactForm = false;
   showSuccessForm = false;
+  score =  { 
+    "checks": [] as number[],
+    "dataPoints": null as unknown as number,
+    "dataAttributes": null as unknown as number,
+    "percComplete": null as unknown as number,
+    "customerEmail": null as any,
+    "customerName": null as any,
+    "customerCompany": null as any,
+    "dataFrequency": null as any,
+    "dataLocation": null as any,
+    "additionalInfo": null as any
+  }
+  // final score var ... can put as input in child comp
 
   
   constructor(private _dataService: DataService) { }
@@ -61,29 +65,32 @@ export class CalculatorComponent implements OnInit {
 
   setCalculatorData(calculatorData: any) {
     console.log(calculatorData);
+    this.score.checks.push(calculatorData.checkboxBinary === "" ? 0 : 1);
+    this.score.checks.push(calculatorData.checkboxNumerical === "" ? 0 : 1);
+    this.score.checks.push(calculatorData.checkboxDates === "" ? 0 : 1);
+    this.score.dataPoints = calculatorData.dataPoints;
+    this.score.dataAttributes = calculatorData.attributes;
+    this.score.percComplete = calculatorData.completion;
+    this.score.dataFrequency = calculatorData.updateFreq;    
+    this.score.additionalInfo = calculatorData.dataLocation;        
   }
   setContactData(contactData: any) {
     console.log(contactData);
+    this.score.customerEmail = contactData.email;        
+    this.score.customerName = contactData.fullName;        
+    this.score.customerCompany = contactData.company;        
+    this.score.dataLocation = contactData.questions;        
 }  
   
 
-  submitDataScore() {
-  
-  let score = {
-    "checks": [1, 1, 1],
-    "dataPoints": 6000,
-    "dataAttributes": 30,
-    "percComplete": 1,
-    "customerEmail": "test",
-    "customerName": "test",
-    "customerCompany": "Test",
-    "dataFrequency": "test",
-    "dataLocation": "test",
-    "additionalInfo": "test"
+  submitDataScore(dataScore: any) {
+    console.log(dataScore);
+    let score = {
   }
 
-    this._dataService.postDataScore(score).subscribe(response => {
-      console.log(response)
+    this._dataService.postDataScore(this.score).subscribe(response => {
+   
+      console.log(this.score)
     })
   }
 

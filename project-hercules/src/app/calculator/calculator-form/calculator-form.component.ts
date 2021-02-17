@@ -16,9 +16,9 @@ class dataEntry {
     public checkboxBinary:any = '',
     public checkboxNumerical:any = '',
     public checkboxDates:any = '',
-    public dataPoints:string = '',
-    public attributes:string = '',
-    public completion:string = '',
+    public dataPoints:any = '',
+    public attributes:any = '',
+    public completion:any = '',
     public updateFreq:any = '',
     public dataLocation:any = '',
   ) {
@@ -92,7 +92,7 @@ export class CalculatorFormComponent implements OnInit {
   }
 
   submitDataScore() {
-    this.submitCalcScore.emit(null)
+    this.submitCalcScore.emit("")
   }
 
   onSubmit() {

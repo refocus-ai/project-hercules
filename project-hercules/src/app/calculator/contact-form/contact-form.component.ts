@@ -43,7 +43,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   submitDataScore() {
-    this.submitContactScore.emit(null)
+    this.submitContactScore.emit("")
   }
   
   

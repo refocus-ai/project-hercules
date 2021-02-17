@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </div>
-                    <button [disabled]="f.invalid" type="button" (click)="submitDataScore()"  (click)="onSubmit()" (click)="toggle()" class="btn btn-next container" id="check">Next</button>
+                    <button [disabled]="f.invalid" type="button" (click)="submitDataScore(); onSubmit(); toggle()" class="btn btn-next container" id="check">Next</button>
                 </div>
     </form>
 </div>

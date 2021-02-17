@@ -35,9 +35,9 @@ export class CalculatorComponent implements OnInit {
   showSuccessForm = false;
   score =  { 
     "checks": [] as number[],
-    "dataPoints": null as unknown as number,
-    "dataAttributes": null as unknown as number,
-    "percComplete": null as unknown as number,
+    "dataPoints": null as any,
+    "dataAttributes": null as any,
+    "percComplete": null as any,
     "customerEmail": null as any,
     "customerName": null as any,
     "customerCompany": null as any,
@@ -71,7 +71,7 @@ export class CalculatorComponent implements OnInit {
     this.score.dataPoints = calculatorData.dataPoints;
     this.score.dataAttributes = calculatorData.attributes;
     this.score.percComplete = calculatorData.completion;
-    this.score.dataFrequency = calculatorData.updateFreq;    
+    this.score.dataFrequency = calculatorData.updateFreq;     
     this.score.additionalInfo = calculatorData.dataLocation;        
   }
   setContactData(contactData: any) {

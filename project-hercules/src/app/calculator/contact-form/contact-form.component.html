@@ -27,7 +27,7 @@
             <textarea class="form-control" id="user-questions" rows="3" name="user-questions" [(ngModel)]="model.questions"></textarea>
         </div>
         <div>
-            <button (click)="onSubmit()" (click)="submitDataScore()" (click)="toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>
+            <button (click)="onSubmit(); submitDataScore; toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>
         </div>
         <div>
             <span  (click)="toggle()" class="go-back"> Go Back</span>

@@ -10,8 +10,8 @@
 			</div>
         </div>
         <div class="mb-3">
-            <label for="Company" class="form-label calculator-header">Company</label>
-            <input type="text" class="form-control" id="Company" name="company" [(ngModel)]="model.company">
+            <label for="company" class="form-label calculator-header">Company</label>
+            <input type="text" class="form-control" id="company" name="company" [(ngModel)]="model.company">
         </div>
         <div class="mb-3 form-group">
             <label for="email" class="form-label calculator-header">Email</label>
@@ -23,8 +23,8 @@
 		</div>
         </div>
         <div class="mb-3 form-group">
-            <label for="user-questions" class="form-label calculator-header">What else would you like to know about your data?</label>
-            <textarea class="form-control" id="user-questions" rows="3" name="user-questions" [(ngModel)]="model.questions"></textarea>
+            <label for="questions" class="form-label calculator-header">What else would you like to know about your data?</label>
+            <textarea class="form-control" id="questions" rows="3" name="questions" [(ngModel)]="model.questions"></textarea>
         </div>
         <div>
             <button (click)="onSubmit(); submitDataScore; toggleSuccess()" type="button" class="btn container" [disabled]="f.invalid">Submit</button>

@@ -38,19 +38,22 @@ export class CalculatorComponent implements OnInit {
     "dataPoints": null as any,
     "dataAttributes": null as any,
     "percComplete": null as any,
+    "dataFrequency": null as any,
+    "dataLocation": null as any,
     "customerEmail": null as any,
     "customerName": null as any,
     "customerCompany": null as any,
-    "dataFrequency": null as any,
-    "dataLocation": null as any,
-    "additionalInfo": null as any
+    "questions": null as any
   }
+  dataScore: any;
+  
   // final score var ... can put as input in child comp
 
   
   constructor(private _dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataScore = "";
   
   }
 
@@ -70,29 +73,21 @@ export class CalculatorComponent implements OnInit {
     this.score.checks.push(calculatorData.checkboxDates === "" ? 0 : 1);
     this.score.dataPoints = calculatorData.dataPoints;
     this.score.dataAttributes = calculatorData.attributes;
-    this.score.percComplete = calculatorData.completion;
+    this.score.percComplete = calculatorData.myRange/100;
     this.score.dataFrequency = calculatorData.updateFreq;     
-    this.score.additionalInfo = calculatorData.dataLocation;        
+    this.score.dataLocation = calculatorData.dataLocation;        
   }
   setContactData(contactData: any) {
     console.log(contactData);
     this.score.customerEmail = contactData.email;        
     this.score.customerName = contactData.fullName;        
     this.score.customerCompany = contactData.company;        
-    this.score.dataLocation = contactData.questions;        
-}  
-  
-
-  submitDataScore(dataScore: any) {
-    console.log(dataScore);
-    let score = {
-  }
-
+    this.score.questions = contactData.questions; 
     this._dataService.postDataScore(this.score).subscribe(response => {
-   
-      console.log(this.score)
-    })
-  }
+    console.log(response.body);
+    this.dataScore = response.body;
+    })       
+}  
 
   
 }

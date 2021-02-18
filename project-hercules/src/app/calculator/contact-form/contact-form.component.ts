@@ -42,10 +42,6 @@ export class ContactFormComponent implements OnInit {
       this.goBack.emit(null)
   }
 
-  submitDataScore() {
-    this.submitContactScore.emit("")
-  }
-  
   
   onSubmit() {
     if (this.form.valid) {

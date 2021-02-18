@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -11,7 +11,7 @@ export class SuccessFormComponent implements OnInit {
   faCoffee = faCoffee;
   faCheckSquare = faCheckSquare;
 
-  
+  @Input() dataScore: any;
   @Output() back: EventEmitter <any> = new EventEmitter <any> ();
 
 

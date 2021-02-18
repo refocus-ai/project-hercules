@@ -94,8 +94,6 @@ export class CalculatorFormComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log("Form Submitted!");
-      console.log(this.form.value);
       this.calculatorFormDataOutput.emit(this.form.value)
     }
     

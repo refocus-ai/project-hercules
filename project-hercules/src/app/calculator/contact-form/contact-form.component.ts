@@ -46,7 +46,6 @@ export class ContactFormComponent implements OnInit {
   onSubmit() {
     if (this.form.valid) {
       this.contactFormDataOutput.emit(this.form.value)
-      console.log("Form Submitted!");
     }
 
   

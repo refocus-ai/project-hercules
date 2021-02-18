@@ -84,8 +84,8 @@ export class CalculatorComponent implements OnInit {
     this.score.customerCompany = contactData.company;        
     this.score.questions = contactData.questions; 
     this._dataService.postDataScore(this.score).subscribe(response => {
-    console.log(response.body);
-    this.dataScore = response.body;
+    console.log(JSON.parse(response.body).dataScore);
+    this.dataScore = Math.round(JSON.parse(response.body).dataScore)
     })       
 }  
 

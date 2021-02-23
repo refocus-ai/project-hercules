@@ -3,7 +3,7 @@
             <div class="col-lg-6 order-lg-12">
                 <app-calculator-form  *ngIf="showCalculatorForm" (next)="toggle()" (calculatorFormDataOutput)="setCalculatorData($event)"></app-calculator-form>
                 <app-contact-form *ngIf="showContactForm" (submit)="toggleSuccess()" (goBack)="toggle()"  (contactFormDataOutput)="setContactData($event)"> </app-contact-form >
-                <app-success-form *ngIf="showSuccessForm" [dataScore]="dataScore" (back)="toggleSuccess()"></app-success-form>
+                <app-success-form *ngIf="showSuccessForm dataScore" [dataScore]="dataScore" (back)="toggleSuccess()"></app-success-form>
             </div>
             <div  class="col-lg-6 order-lg-1 fade-in" id="new">
                 <div id="page-text" class="row" >

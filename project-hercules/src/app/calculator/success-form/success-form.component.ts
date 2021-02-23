@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,6 +11,7 @@ import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class SuccessFormComponent implements OnInit {
   faCoffee = faCoffee;
   faCheckSquare = faCheckSquare;
+  showLoader = true;
 
   @Input() dataScore: any;
   @Output() back: EventEmitter <any> = new EventEmitter <any> ();
@@ -17,10 +19,19 @@ export class SuccessFormComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+  
 
   toggleSuccess() {
     this.back.emit(null)
-}
+  }
+
+  toggleLoader() { 
+    if (this.dataScore){
+      this.showLoader = !this.showLoader;
+    } else {
+      this.showLoader;
+    }
+  }
+
 }

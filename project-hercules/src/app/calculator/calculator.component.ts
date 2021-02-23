@@ -30,7 +30,7 @@ import { DataService } from '../services/data.service';
 
 export class CalculatorComponent implements OnInit {
 
-  showCalculatorForm =  true;
+  showCalculatorForm = true;
   showContactForm = false;
   showSuccessForm = false;
   score =  { 
@@ -47,7 +47,6 @@ export class CalculatorComponent implements OnInit {
   }
   dataScore: any;
   
-  // final score var ... can put as input in child comp
 
   
   constructor(private _dataService: DataService) { }
@@ -84,8 +83,7 @@ export class CalculatorComponent implements OnInit {
     this.score.customerCompany = contactData.company;        
     this.score.questions = contactData.questions; 
     this._dataService.postDataScore(this.score).subscribe(response => {
-    console.log(JSON.parse(response.body).dataScore);
-    this.dataScore = Math.round(JSON.parse(response.body).dataScore)
+    this.dataScore = Math.round(JSON.parse((<any>response).body.toString()).dataScore)
     })       
 }  
 

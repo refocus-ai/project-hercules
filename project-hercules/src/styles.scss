@@ -284,8 +284,8 @@ input[type="checkbox"]:hover {
 input[type="checkbox"]:after {
   content: '\2713\0020';
   position: relative;
-  left: 22%;
-  bottom: 8%;
+  left: 12%;
+  bottom: 32%;
   color:white;
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -418,4 +418,10 @@ textarea.form-control {
 @keyframes fadeIn {
     0% { opacity:0; }
     100% { opacity:100%; }
+}
+
+.dataScore {
+  text-align: center;
+  margin:auto;
+  color: black;
 }

@@ -24,7 +24,7 @@
                                     <div class="col-12">
                                         <div>
                                             <label for="dataPoints" class="form-label calculator-header">Number of Data Points </label> 
-                                            <div class="help-tip"><p>Data Points are the amount of colums you have. Examples include, age, sex etc. </p></div> 
+                                            <div class="help-tip"><p>Data Points are the amount of colums you have. Examples include age, sex etc. </p></div> 
                                             <input [ngStyle]="dataPoints.errors && (dataPoints.dirty || dataPoints.touched)?{'border-color':'red'} : {'border-color': 'white'}" required type="number" name="dataPoints"  class="form-control " id="dataPoints" name="dataPoints" [(ngModel)]="model.dataPoints" #dataPoints="ngModel">
                                             <div class="form-control-feedback"
                                             *ngIf="dataPoints.errors && (dataPoints.dirty || dataPoints.touched)">
@@ -37,7 +37,7 @@
                     
                             <div class="form-group  col-md-6">
                                 <label for="attributes" class="form-label calculator-header">Number of Attributes</label>
-                                <div class="help-tip"><p>Attributes are the rows that you have. For example, number of customers or policies that the customers have? </p></div>
+                                <div class="help-tip"><p>Attributes are the rows that you have. For example, number of customers or policies that the customers have </p></div>
                                 <input [ngStyle]="attributes.errors && (attributes.dirty || attributes.touched)?{'border-color':'red'} : {'border-color': 'white'}"  required type="number" class="form-control" id="attributes" name="attributes" [(ngModel)]="model.attributes" #attributes="ngModel">
                                 <div class="form-control-feedback"
                                 *ngIf="attributes.errors && (attributes.dirty || attributes.touched)">

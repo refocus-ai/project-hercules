@@ -26,6 +26,14 @@ body{
        
 }
 
+a.headers-left {
+  color: black;
+}
+
+a.headers-left:hover {
+  color:#007bff;
+  text-decoration: none;
+}
 
 h2{
   font-size: 24px;
@@ -88,6 +96,7 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  margin: 16px;
 }
 li a:hover {
   background-color: transparent;
@@ -238,6 +247,7 @@ p {
 
 .form-control{
   margin-top: 8px;
+  border: 1px solid #D1D1D1;
 }
 
 .form-select{
@@ -254,6 +264,7 @@ input[type=text] {
 input[type=number] {
   background-color: #fbfbfb;
   justify-content: space-between;
+  border-color: #D1D1D1;
 }
 input[type=email] {
   background-color: #fbfbfb;

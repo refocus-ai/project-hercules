@@ -8,9 +8,10 @@ import { ScullyLibModule } from '@scullyio/ng-lib';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ContactFormComponent } from './calculator/contact-form/contact-form.component';
 import { CalculatorFormComponent } from './calculator/calculator-form/calculator-form.component';
+import { SuccessFormComponent} from './calculator/success-form/success-form.component';
 import { HeaderComponent } from './calculator/header/header.component';
 import { FormsModule } from '@angular/forms';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,16 @@ import { FormsModule } from '@angular/forms';
     CalculatorComponent,
     ContactFormComponent,
     CalculatorFormComponent,
-    HeaderComponent],
+    SuccessFormComponent,
+    HeaderComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

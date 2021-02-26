@@ -10,6 +10,11 @@ body{
         -webkit-text-fill-color: transparent;
         font-weight: 700;
     }      
+      h1.success-check {
+        background: -webkit-linear-gradient(360deg,#55B122, #6ad44f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
    
     h3{
         font-weight: 400;
@@ -19,6 +24,7 @@ body{
     
        
 }
+
 
 h2{
   font-size: 24px;

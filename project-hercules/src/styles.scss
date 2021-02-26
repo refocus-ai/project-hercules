@@ -10,14 +10,29 @@ body{
         -webkit-text-fill-color: transparent;
         font-weight: 700;
     }      
+      h1.success-check {
+        background: -webkit-linear-gradient(360deg,#55B122, #6ad44f);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
    
     h3{
         font-weight: 400;
         font-size: 18px;
         color: #828282;
+        margin-bottom: 25px;
     }
     
        
+}
+
+a.headers-left {
+  color: black;
+}
+
+a.headers-left:hover {
+  color:#007bff;
+  text-decoration: none;
 }
 
 h2{
@@ -81,6 +96,7 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  margin: 16px;
 }
 li a:hover {
   background-color: transparent;
@@ -105,11 +121,11 @@ p {
   text-decoration: none;
 }
 
-.input-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+// .input-container{
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+// }
 
 .calculator-header{
     font-size: 14px;
@@ -147,6 +163,8 @@ p {
     width: 100%;
   }
 
+  
+
 
 
   @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -174,13 +192,13 @@ p {
     input[type='range']::-webkit-slider-thumb {
       -webkit-appearance: none;
       background: white;
-      box-shadow: -220px 0 0 210px #E88845;
+      box-shadow: -260px 0 0 250px #E88845;
       border: rgba(0, 0, 0, 0.29);
       border-style: solid;
       border-width: thin;
       width: 16px; /* Set a specific slider handle width */
       height: 16px; /* Slider handle height */
-      border-radius: 50%; 
+      border-radius: 90%; 
       cursor: pointer; /* Cursor on hover */
     }
     
@@ -208,7 +226,7 @@ p {
   padding: 24px 24px;
   padding-left: 48px !important;
   padding-right: 48px !important;
-  margin-right: 64px;
+  margin: auto;
   max-width: 600px;
 }
 
@@ -229,15 +247,24 @@ p {
 
 .form-control{
   margin-top: 8px;
+  border: 1px solid #D1D1D1;
 }
 
 .form-select{
   margin-top: 8px;
+  background-color: #fbfbfb;
 }
+
 
 input[type=text] {
   background-color: #fbfbfb;
   justify-content: space-between;
+  
+}
+input[type=number] {
+  background-color: #fbfbfb;
+  justify-content: space-between;
+  border-color: #D1D1D1;
 }
 input[type=email] {
   background-color: #fbfbfb;
@@ -268,8 +295,8 @@ input[type="checkbox"]:hover {
 input[type="checkbox"]:after {
   content: '\2713\0020';
   position: relative;
-  left: 22%;
-  bottom: 8%;
+  left: 12%;
+  bottom: 32%;
   color:white;
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -281,7 +308,6 @@ input[type="checkbox"]:checked:after {
 }
   
 select {
-  width: 200px;
   height: 38px;
   font-size: 12px;
   cursor: pointer;
@@ -331,4 +357,82 @@ textarea.form-control {
   position: -webkit-sticky;
   position: sticky;
   top: 7.5rem;
+}
+
+
+  
+.help-tip{
+	display: inline-block;
+	position: static;
+	text-align: center;
+	background-color: #BCDBEA;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	font-size: 14px;
+  line-height: 22px;
+  margin-left:.5vw;
+	cursor: default;
+}
+
+.help-tip:before{
+	content:'?';
+	font-weight: bold;
+	color:#fff;
+}
+
+.help-tip:hover p{
+  display: inline-block;
+  transform-origin: 100% 0%;
+  left: 2px;
+}
+
+.help-tip p{	/* The tooltip */
+	display: none;
+	text-align: left;
+	background-color: black;
+	padding: 10px;
+	width: 200px;
+	position:absolute;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.774);
+	color: #FFF;
+	font-size: 13px;
+  line-height: 1.4;
+  z-index: 1;
+}
+
+.help-tip p:after{ /* Prevents the tooltip from being hidden */
+	width:100%;
+	height:40px;
+	content:'';
+	position: absolute;
+	top:-40px;
+	left:0;
+}
+
+
+/* CSS animation */
+
+@-webkit-keyframes fadeIn {
+    0% { 
+        opacity:0; 
+        transform: scale(0);
+    }
+
+    100% {
+        opacity:100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; }
+    100% { opacity:100%; }
+}
+
+.dataScore {
+  text-align: center;
+  margin:auto;
+  color: black;
 }

@@ -1,0 +1,17 @@
+
+
+<div  class="container form-border punk">
+    <h1 class="success-check">Form Submitted! <span> </span> <i class="success-check fa fa-check-square-o fa-lg" aria-hidden="true"></i></h1>
+        <br>
+    <h2 class="dataScore">Your score: {{ dataScore }}
+        <div *ngIf="showLoader" class="spinner-border" role="status"></div>
+    </h2>
+        <br>
+    <h3 class="dataScore"><strong>Is your score a good score? </strong> Our calculator scores your data on a scale between 0 and 100. The higher your score, the better your data! 
+       <br> <br> If you want to learn more about what your score means and how to improve your data, <strong><a href= "https://blog.refocusai.com/data-calculator/" style="display: inline-block">read this article</a></strong>  or contact our team here <strong><a href="https://refocusai.com/contact/" style="display: inline-block">Contact</a></strong> .
+    </h3>
+        <br>
+    <div>
+        <span (click)="toggleSuccess()" class="go-back"> Go Back</span>
+    </div>
+</div>
